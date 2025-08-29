@@ -1,77 +1,98 @@
 /* =================================================================
-   セクション：ヘッダー
+ヘッダー
 ================================================================= */
+.header-wrapper {
+    display: block;
+    position: relative;
+    background-color: rgb(var(--color-background));
+}
 
-// メインヘッダーのレイアウト
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-// ロゴ（左側）
-.header__heading {
-  margin: 0; // 不要な余白をリセット
-}
-
-// ナビゲーションとアイコン群（右側）
-.header__inline-menu,
-.header__icons {
-  display: flex;
-  align-items: center;
-  gap: 2rem; // 各要素間のスペース
-}
-
-// PC用ナビゲーションのスタイル
-.header__inline-menu {
-  .header__menu-item {
-    padding: 0; // 元の余白をリセット
-    font-family: var(--font-body-family); // 基本フォントを適用
-    font-size: 1.4rem;
-
-    // メニューアイテム間のスペース
-    & + li {
-      margin-left: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    &__heading{
+        margin-block: 0;
+        &-link{
+            display: block;
+            width: 200px;
+            margin-left: 0;
+            padding: 0;
+        }
+        &-logo {
+            height: auto;
+            width: 100%;
+        }
     }
-  }
-
-  // リンクの下線を消す
-  .header__menu-item > span {
-    text-decoration: none;
-  }
-}
-
-// アイコン群のスタイル
-.header__icons {
-  // 検索、アカウント、カートのアイコンサイズ調整
-  .header__icon .icon {
-    width: 1.8rem;
-    height: 1.8rem;
-  }
-}
-
-// ナビとアイコンの間の縦区切り線
-.header__vertical-separator {
-  width: 1px;
-  height: 20px;
-  background-color: #e0e0e0; // 薄いグレー
-  margin-right: 1rem;
-}
-
-
-/* =================================================================
-   セクション：告知バー
-================================================================= */
-.announcement-bar {
-  background-color: #3f7a6c; // CSS変数 var(--color-accent-1) でも可
-  border-bottom: none; // 元の線を消す
-
-  .announcement-bar__message {
-    color: #f4f5f5; // CSS変数 var(--color-background-1) でも可
-    font-family: 'Shippori Mincho B1', serif; // 見出し用フォント
-    font-size: 1.4rem;
-    letter-spacing: 0.1rem;
-  }
+    &__content-right{
+        display: flex;
+        align-items: center;
+        position: relative;
+        &::after{
+            content: "";
+            position: absolute;
+            right: -2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 100%;
+            background-color: var(--color-foreground);
+        }
+    }
+    &__inline-menu,
+    &__icons {
+        display: flex;
+        align-items: center;
+        margin-top: 0;
+    }
+    &__inline-menu{
+        padding-right: 2rem;
+        gap: 2rem;
+        .list-menu{
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            .header__submenu{
+                list-style: none;
+                padding-left: 0;
+                top: 47px;
+                left: 50%;
+                transform: translateX(-50%) !important;
+                .header__menu-item{
+                    padding: 2rem 3rem;
+                }
+            }
+        }
+    }
+    &__icons{
+        padding-left: 2rem;
+        position: relative;
+        gap: .5rem;
+        &::before{
+            content:'';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 55%;
+            background-color: rgba(176,184,184);
+        }
+    }
+    &__menu-item{
+        padding: 0;
+        font-family: var(--font-heading-family);
+        font-size: 1.4rem;
+        font-weight: 600;
+        > span {
+            text-decoration: none;
+        }
+    }
+    &__vertical-separator {
+        width: 1px;
+        height: 20px;
+        background-color: #e0e0e0; // 薄いグレー
+        margin-right: 1rem;
+    }
 }

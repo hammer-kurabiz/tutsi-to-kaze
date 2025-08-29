@@ -1,0 +1,14 @@
+# Shopifyのカスタマイザー設定を無視する (最重要)
+config/settings_data.json
+
+# Git関連のファイル
+.git/
+.gitignore
+README.md
+
+# Viteの開発用ソースフォルダ
+frontend/
+node_modules/
+package.json
+package-lock.json
+vite.config.js
