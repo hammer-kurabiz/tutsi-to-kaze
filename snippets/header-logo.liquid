@@ -1,0 +1,27 @@
+{% comment %}
+  トップページ（index）の場合のみ、ロゴをh1タグで囲むためのロジック。
+  これにより、サイトのタイトルがトップページに正しく一つだけ存在することになり、SEO的に有利になります。
+{% endcomment %}
+{%- if request.page_type == 'index' -%}
+  <h1 class="header__heading">
+{%- endif -%}
+
+    <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
+      {%- if section.settings.logo != blank -%}
+        {%- assign image_size = section.settings.logo_width | append: 'x' -%}
+        <img srcset="{{ section.settings.logo | image_url: width: section.settings.logo_width }} 1x, {{ section.settings.logo | image_url: width: section.settings.logo_width, scale: 2 }} 2x"
+          src="{{ section.settings.logo | image_url: width: section.settings.logo_width }}"
+          loading="eager"
+          class="header__heading-logo"
+          width="{{ section.settings.logo_width }}"
+          height="auto"
+          alt="{{ section.settings.logo.alt | default: shop.name | escape }}"
+        >
+      {%- else -%}
+        <span class="h2">{{ shop.name }}</span>
+      {%- endif -%}
+    </a>
+
+{%- if request.page_type == 'index' -%}
+  </h1>
+{%- endif -%}
