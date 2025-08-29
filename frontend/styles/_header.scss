@@ -1,0 +1,77 @@
+/* =================================================================
+   セクション：ヘッダー
+================================================================= */
+
+// メインヘッダーのレイアウト
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+// ロゴ（左側）
+.header__heading {
+  margin: 0; // 不要な余白をリセット
+}
+
+// ナビゲーションとアイコン群（右側）
+.header__inline-menu,
+.header__icons {
+  display: flex;
+  align-items: center;
+  gap: 2rem; // 各要素間のスペース
+}
+
+// PC用ナビゲーションのスタイル
+.header__inline-menu {
+  .header__menu-item {
+    padding: 0; // 元の余白をリセット
+    font-family: var(--font-body-family); // 基本フォントを適用
+    font-size: 1.4rem;
+
+    // メニューアイテム間のスペース
+    & + li {
+      margin-left: 2.5rem;
+    }
+  }
+
+  // リンクの下線を消す
+  .header__menu-item > span {
+    text-decoration: none;
+  }
+}
+
+// アイコン群のスタイル
+.header__icons {
+  // 検索、アカウント、カートのアイコンサイズ調整
+  .header__icon .icon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+}
+
+// ナビとアイコンの間の縦区切り線
+.header__vertical-separator {
+  width: 1px;
+  height: 20px;
+  background-color: #e0e0e0; // 薄いグレー
+  margin-right: 1rem;
+}
+
+
+/* =================================================================
+   セクション：告知バー
+================================================================= */
+.announcement-bar {
+  background-color: #3f7a6c; // CSS変数 var(--color-accent-1) でも可
+  border-bottom: none; // 元の線を消す
+
+  .announcement-bar__message {
+    color: #f4f5f5; // CSS変数 var(--color-background-1) でも可
+    font-family: 'Shippori Mincho B1', serif; // 見出し用フォント
+    font-size: 1.4rem;
+    letter-spacing: 0.1rem;
+  }
+}
