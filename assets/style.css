@@ -1,0 +1,465 @@
+#MainContent .page-width {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+#MainContent a:empty, #MainContent ul:empty, #MainContent dl:empty, #MainContent div:empty, #MainContent section:empty, #MainContent article:empty, #MainContent p:empty, #MainContent h1:empty, #MainContent h2:empty, #MainContent h3:empty, #MainContent h4:empty, #MainContent h5:empty, #MainContent h6:empty {
+  display: block;
+}
+#MainContent h1 {
+  display: none;
+}
+
+.sticky-bnr {
+  display: block;
+  padding: 1em;
+  background: #c9c9a0;
+  color: var(--color-txt);
+  text-align: center;
+}
+
+.fv-wrap .dry-botanical-slide .swiper-slide {
+  position: relative;
+}
+.fv-wrap .dry-botanical-slide .swiper-slide p {
+  position: absolute;
+  z-index: 1;
+}
+.fv-wrap .dry-botanical-slide .swiper-slide p span {
+  padding-left: 0.45em;
+  font-size: 0.5em;
+}
+.fv-wrap .dry-botanical-slide .swiper-slide img {
+  margin: 0;
+}
+.fv-wrap .dry-botanical-slide .swiper-slide.-slide01 p {
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
+}
+.fv-wrap .dry-botanical-slide .swiper-slide.-slide02 p {
+  top: 10%;
+  left: 10%;
+}
+.fv-wrap .dry-botanical-slide .swiper-slide.-slide03 p {
+  bottom: 10%;
+  right: 10%;
+}
+@media screen and (max-width: 768px) {
+  .fv-wrap .dry-botanical-slide .swiper-slide p {
+    font-size: 2.2em;
+  }
+  .fv-wrap .dry-botanical-slide .swiper-slide.-slide01 p {
+    top: 5%;
+    right: 5%;
+    transform: translateY(0);
+  }
+  .fv-wrap .dry-botanical-slide .swiper-slide.-slide02 p {
+    top: 5%;
+    left: 5%;
+  }
+  .fv-wrap .dry-botanical-slide .swiper-slide.-slide03 p {
+    bottom: 12%;
+    left: 5%;
+    right: auto;
+  }
+}
+
+.onayamiBox {
+  position: relative;
+  padding: 4em;
+  background: #fff;
+  text-align: center;
+}
+.onayamiBox::after {
+  content: "";
+  position: absolute;
+  bottom: -19px;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #fff;
+  transform: translateX(-50%);
+}
+.onayamiBox .inner {
+  display: inline-block;
+  text-align: left;
+}
+.onayamiBox .inner .ttl span {
+  position: relative;
+  padding: 0 4.5em;
+}
+.onayamiBox .inner .ttl span::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 3em;
+  height: 1px;
+  background: var(--color-txt);
+  transform: translateY(-50%);
+}
+.onayamiBox .inner .ttl span::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 3em;
+  height: 1px;
+  background: var(--color-txt);
+  transform: translateY(-50%);
+}
+@media screen and (min-width: 768px) {
+  .onayamiBox .inner .contentBox .imgBox {
+    width: 30%;
+  }
+  .onayamiBox .inner .contentBox .txtBox {
+    width: 70%;
+  }
+}
+.onayamiBox .inner .checkList {
+  padding: 0;
+}
+.onayamiBox .inner .checkList li {
+  position: relative;
+  margin: 0.4em 0;
+  padding-left: 1.5em;
+  line-height: 1.8;
+}
+.onayamiBox .inner .checkList li::before {
+  content: "";
+  position: absolute;
+  top: 0.5em;
+  left: 0;
+  width: 1em;
+  height: 1em;
+  border: solid 1px var(--color-txt);
+}
+@media screen and (max-width: 768px) {
+  .onayamiBox {
+    padding: 30px;
+  }
+  .onayamiBox .inner .ttl span {
+    display: inline-flex;
+    padding: 0 1.3em;
+  }
+  .onayamiBox .inner .ttl span::before, .onayamiBox .inner .ttl span::after {
+    width: 1em;
+  }
+}
+
+.serviceAncBox {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0 35px;
+  width: 84.6%;
+  margin: 0 auto;
+}
+.serviceAncBox > * {
+  width: calc(33.333% - 24px);
+}
+@media screen and (max-width: 768px) {
+  .serviceAncBox {
+    gap: 0 20px;
+    width: 100%;
+  }
+  .serviceAncBox > * {
+    width: calc(50% - 10px);
+  }
+}
+
+.short-line {
+  position: relative;
+  padding-bottom: 0.5em;
+}
+.short-line::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 1px;
+  background: var(--color-txt);
+}
+@media screen and (max-width: 768px) {
+  .short-line::after {
+    width: 50px;
+  }
+}
+
+.long-line {
+  position: relative;
+  padding-bottom: 0.5em;
+}
+.long-line::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--color-txt);
+}
+
+.jissekiBox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 70px;
+}
+.jissekiBox > * {
+  width: calc(50% - 35px);
+}
+@media screen and (max-width: 992px) {
+  .jissekiBox {
+    gap: 40px;
+  }
+  .jissekiBox > * {
+    width: calc(50% - 20px);
+  }
+}
+@media screen and (max-width: 768px) {
+  .jissekiBox > * {
+    width: 100%;
+  }
+  .jissekiBox > * .txtBox .fz-26 {
+    font-size: 1.35em;
+  }
+}
+
+.icon-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 15px 35px 15px 25px;
+  background: #ebecec;
+  line-height: 1.5;
+}
+.icon-btn span {
+  display: flex;
+  align-items: center;
+  font-size: 0.88em;
+}
+.icon-btn span img {
+  max-width: 15px;
+  max-height: 15px;
+  min-width: 15px;
+  min-height: 15px;
+  margin: 0 5px 0 0;
+}
+.icon-btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  width: 6px;
+  height: 6px;
+  border-right: solid 1px var(--color-txt);
+  border-bottom: solid 1px var(--color-txt);
+  transform: rotate(-45deg) translateY(-50%);
+}
+.icon-btn:hover {
+  opacity: 0.7;
+}
+
+.contactArea .contactBox {
+  background: url(https://cdn.shopify.com/s/files/1/0440/0637/5579/files/contact01.webp?v=1713853903) no-repeat center/cover;
+  text-align: center;
+}
+.contactArea .contactBox .inner {
+  padding: 0 30px;
+}
+.contactArea .contactBox .inner .contactBtnBox {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px 30px;
+}
+.contactArea .contactBox .inner .contactBtnBox .contactBtn {
+  display: block;
+  width: 100%;
+  max-width: 330px;
+  padding: 20px;
+  background: #fff;
+  font-weight: bold;
+}
+.contactArea .contactBox .inner .contactBtnBox .contactBtn > * {
+  display: flex;
+  align-items: center;
+}
+.contactArea .contactBox .inner .contactBtnBox .contactBtn > * img {
+  max-width: 25px;
+  max-height: 25px;
+  min-width: 25px;
+  min-height: 25px;
+  margin: 0 6px 0 0;
+}
+@media screen and (min-width: 768px) {
+  .contactArea .contactBox .inner .contactBtnBox .contactBtn {
+    width: calc(50% - 15px);
+    padding: 25px 30px;
+  }
+  .contactArea .contactBox .inner .contactBtnBox .contactBtn > * img {
+    max-width: 30px;
+    max-height: 30px;
+    min-width: 30px;
+    min-height: 30px;
+    margin: 0 10px 0 0;
+  }
+}
+@media screen and (max-width: 370px) {
+  .contactArea .contactBox .inner {
+    padding: 0 20px;
+  }
+  .contactArea .contactBox .inner .contactBtnBox .contactBtn.-mail {
+    font-size: 14px;
+  }
+}
+
+.serviceBox {
+  position: relative;
+}
+.serviceBox .imgBox {
+  position: relative;
+}
+.serviceBox .imgBox .deco {
+  position: absolute;
+  top: 0;
+  right: 26%;
+  width: 33%;
+  margin-top: 6%;
+}
+.serviceBox .imgBox .deco::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  padding-top: 100%;
+  background: var(--color-accent);
+}
+.serviceBox .imgBox img {
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  transition-duration: 1.5s;
+}
+.serviceBox .imgBox img.img01 {
+  top: 0;
+  right: 0;
+  width: 50%;
+}
+.serviceBox .imgBox img.img02 {
+  top: 0;
+  right: 45%;
+  width: 30%;
+  max-width: 450px;
+  margin-top: 27%;
+  z-index: 2;
+  transition-delay: 0.6s;
+}
+.serviceBox .imgBox img.img03 {
+  top: 0;
+  right: 10%;
+  width: 24.5%;
+  max-width: 334px;
+  margin-top: 36.5%;
+  z-index: 2;
+  transition-delay: 1.2s;
+}
+.serviceBox .imgBox.-is-active img {
+  opacity: 1;
+}
+.serviceBox.-reverse .imgBox .deco {
+  left: 26%;
+}
+.serviceBox.-reverse .imgBox img.img01 {
+  left: 0;
+}
+.serviceBox.-reverse .imgBox img.img02 {
+  left: 45%;
+}
+.serviceBox.-reverse .imgBox img.img03 {
+  left: 10%;
+}
+@media screen and (min-width: 768px) {
+  .serviceBox .txtBox {
+    position: relative;
+    padding-bottom: 30%;
+  }
+  .serviceBox .txtBox .inner {
+    width: 45%;
+  }
+  .serviceBox.-reverse .txtBox {
+    text-align: right;
+  }
+  .serviceBox.-reverse .txtBox .inner {
+    display: inline-block;
+    text-align: left;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .serviceBox .imgBox img.img02 {
+    margin-top: 31%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .serviceBox .imgBox img.img02 {
+    margin-top: 40%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .serviceBox .imgBox {
+    height: 0;
+    padding-top: 100%;
+  }
+  .serviceBox .imgBox .deco {
+    right: auto;
+    left: 0;
+    width: 67%;
+    margin-top: 12%;
+  }
+  .serviceBox .imgBox img.img01 {
+    width: 90%;
+  }
+  .serviceBox .imgBox img.img02 {
+    right: auto;
+    left: 3%;
+    width: 50%;
+    margin-top: 65%;
+  }
+  .serviceBox .imgBox img.img03 {
+    right: 6%;
+    width: 36%;
+    margin-top: 82%;
+  }
+  .serviceBox .txtBox {
+    padding-top: 30px;
+  }
+  .serviceBox.-reverse .imgBox .deco {
+    left: auto;
+    right: 0;
+  }
+  .serviceBox.-reverse .imgBox img.img01 {
+    left: auto;
+    right: 0;
+  }
+  .serviceBox.-reverse .imgBox img.img02 {
+    left: auto;
+    right: 3%;
+  }
+  .serviceBox.-reverse .imgBox img.img03 {
+    right: auto;
+    left: 6%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .serviceArea .fz-30.long-line {
+    font-size: 1.3em;
+  }
+}/*# sourceMappingURL=style.css.map */

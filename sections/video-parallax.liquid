@@ -1,0 +1,54 @@
+<div class="back-movie-block">
+      <div class="parallax scroll-play{% if section.settings.movie_url_sp != blank %} hidden-sp{% endif %} video-wrapper -pc">
+          <video muted playsinline loop>
+              <source src="{{ section.settings.movie_url_pc }}" type="video/mp4">
+              {% if section.settings.movie_img_pc != blank %}
+              <img src="{{ section.settings.movie_img_pc | img_url: "master" }}">
+            {%  endif %}
+          </video>
+      </div>
+      {% if section.settings.movie_url_sp != blank %}
+        <div class="parallax scroll-play visible-sp video-wrapper -sp">
+          <video muted playsinline loop>
+              <source src="{{ section.settings.movie_url_sp }}" type="video/mp4">
+              {% if section.settings.movie_img_sp != blank %}
+              <img src="{{ section.settings.movie_img_sp | img_url: "master" }}">
+            {%  endif %}
+          </video>
+      </div>
+      {% endif %}
+  </div>
+{% schema %}
+{
+  "name":  "パララックスムービー",
+  "class": "original-movie",
+  "settings": [
+      {
+        "type": "url",
+        "id": "movie_url_pc",
+        "label":"パソコン用動画"
+      },
+      {
+         "type": "image_picker",
+         "id": "movie_img_pc",
+         "label":"パソコン用カバー画像"
+      },
+	{
+        "type": "url",
+        "id": "movie_url_sp",
+        "label":"スマホ用動画"
+      },
+      {
+         "type": "image_picker",
+         "id": "movie_img_sp",
+         "label":"スマホ用カバー画像"
+      }
+    ],
+  "presets": [
+      {
+        "name": "パララックスムービー",
+        "category": "高度なレイアウト"
+      }
+    ]
+}
+{% endschema %}

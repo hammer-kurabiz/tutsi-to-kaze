@@ -1,0 +1,1198 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "166190620417471e2c": {
+      "type": "fv-slide",
+      "blocks": {
+        "image_picker_wBkhDz": {
+          "type": "image_picker",
+          "settings": {
+            "swiper_img_pc": "shopify://shop_images/FV_7_-min_aa09360e-543a-4def-ac41-5bed38883ba2.jpg",
+            "swiper_img_sp": "shopify://shop_images/FV_8_-min_b8604706-d289-424c-810b-55630f380b3d.jpg",
+            "my_url_name": "https://tsuchikaze.jp/collections/big"
+          }
+        },
+        "image_picker_VExVMm": {
+          "type": "image_picker",
+          "disabled": true,
+          "settings": {
+            "swiper_img_pc": "shopify://shop_images/smoketree_FV1-min.jpg",
+            "swiper_img_sp": "shopify://shop_images/smoketree_SP1-min.jpg",
+            "my_url_name": "https://tsuchikaze.jp/collections/smoketree"
+          }
+        },
+        "image_picker_DKMLYG": {
+          "type": "image_picker",
+          "disabled": true,
+          "settings": {
+            "swiper_img_pc": "shopify://shop_images/FV_3_-min_108526c2-8d3a-4276-ac16-f8cfaa4f17e3.jpg",
+            "swiper_img_sp": "shopify://shop_images/pickup_1.jpg",
+            "my_url_name": "https://tsuchikaze.jp/collections/hydrangea"
+          }
+        },
+        "image_picker_LDQ6tg": {
+          "type": "image_picker",
+          "disabled": true,
+          "settings": {
+            "swiper_img_pc": "shopify://shop_images/FV_5_-min_120b2b59-4c59-4bcd-975f-347547bf094d.jpg",
+            "swiper_img_sp": "shopify://shop_images/pickup_29_-min_f5829107-fa84-47df-8499-c7807b8a82a7.jpg",
+            "my_url_name": "https://tsuchikaze.jp/collections/big"
+          }
+        },
+        "image_picker_GNMQ6N": {
+          "type": "image_picker",
+          "disabled": true,
+          "settings": {
+            "swiper_img_pc": "shopify://shop_images/FV-min_659e81db-ca65-4bbb-885a-9bfad3caa596.jpg",
+            "swiper_img_sp": "shopify://shop_images/pickup_3_-min_f88e4cde-fb38-43f5-8776-2e3125088337.jpg",
+            "my_url_name": "https://tsuchikaze.jp/collections/smoketree"
+          }
+        },
+        "image_picker_y6FJ7z": {
+          "type": "image_picker",
+          "disabled": true,
+          "settings": {
+            "swiper_img_pc": "shopify://shop_images/FV_9_-min_5eb27085-2998-4673-83a4-b8d185a45ec0.jpg",
+            "swiper_img_sp": "shopify://shop_images/pickup_60_-min_05ef172b-b71a-43da-9186-f3184834f3e3.jpg",
+            "my_url_name": "https://tsuchikaze.jp/blogs/tsuchikaze_news/202505soryo"
+          }
+        },
+        "image_picker_6qdhhf": {
+          "type": "image_picker",
+          "disabled": true,
+          "settings": {
+            "swiper_img_pc": "shopify://shop_images/241001__FV_1920x1080-min.jpg",
+            "swiper_img_sp": "shopify://shop_images/241001__FV_1080x1080-min.jpg",
+            "my_url_name": "https://tsuchikaze.jp/products/made-320"
+          }
+        },
+        "image_picker_x7r6Nk": {
+          "type": "image_picker",
+          "disabled": true,
+          "settings": {
+            "swiper_img_pc": "shopify://shop_images/FV_30_-min.jpg",
+            "swiper_img_sp": "shopify://shop_images/FV_31_-min.jpg",
+            "my_url_name": "https://tsuchikaze.jp/products/made-348"
+          }
+        }
+      },
+      "block_order": [
+        "image_picker_wBkhDz",
+        "image_picker_VExVMm",
+        "image_picker_DKMLYG",
+        "image_picker_LDQ6tg",
+        "image_picker_GNMQ6N",
+        "image_picker_y6FJ7z",
+        "image_picker_6qdhhf",
+        "image_picker_x7r6Nk"
+      ],
+      "settings": {}
+    },
+    "featured_collection_bR78Tj": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "空間を引き立てる大きな植物",
+        "heading_size": "h2",
+        "collection": "big",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "background-1",
+        "show_view_all": true,
+        "image_ratio": "adapt",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 44,
+        "padding_bottom": 40
+      }
+    },
+    "rich_text_Hpz4Gb": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_f3KNNk": {
+          "type": "heading",
+          "settings": {
+            "heading": "お知らせ",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_f3KNNk"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "color_scheme": "background-2",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "news_multicolumn_8EBcYG": {
+      "type": "news-multicolumn",
+      "blocks": {
+        "column_wcnkmR": {
+          "type": "column",
+          "settings": {
+            "date": "25/8/26",
+            "title": "送料改定のお知らせ",
+            "link": "https://tsuchikaze.jp/blogs/tsuchikaze_news/soryo0826"
+          }
+        },
+        "column_4RLAgM": {
+          "type": "column",
+          "settings": {
+            "date": "25/8/22",
+            "title": "【MAX50%OFF】夏のドライフラワー特別セール",
+            "link": "https://tsuchikaze.jp/collections/otoku"
+          }
+        },
+        "column_Vj3Lbt": {
+          "type": "column",
+          "settings": {
+            "date": "25/8/22",
+            "title": "パンパスグラス10%OFF予約販売は8月末まで",
+            "link": "https://tsuchikaze.jp/collections/pampasgrass"
+          }
+        },
+        "column_dhz8MM": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "date": "25/7/9",
+            "title": "8/2はハーブの日！8/1〜8/2に阪急うめだでワークショップを開催します",
+            "link": "https://tsuchikaze.jp/blogs/popup/250802"
+          }
+        },
+        "column_yXFMdz": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "date": "25/7/25",
+            "title": "夏季休業のお知らせ",
+            "link": "shopify://blogs/tsuchikaze_news/summer24"
+          }
+        },
+        "column_ExQXEc": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "date": "25/5/28",
+            "title": "5/29-5/30は棚卸業務のため、お問合せ、発送業務をお休みさせていただきます",
+            "link": ""
+          }
+        },
+        "column_UkzaTR": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "date": "24/2/9",
+            "title": "土と風の植物園では、共に働く仲間を募集しています",
+            "link": "https://tsuchikaze.jp/blogs/tsuchikaze_news/recrut"
+          }
+        },
+        "column_AxfCkL": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "date": "25/8/18",
+            "title": "8/19は収穫のため発送のみお休みさせていただきます",
+            "link": ""
+          }
+        },
+        "column_H7HLyd": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "date": "25/2/24",
+            "title": "大雪の影響によるお届け遅延の可能性について",
+            "link": "shopify://blogs/tsuchikaze_news/雪の影響によるお届け遅延の可能性について"
+          }
+        },
+        "column_4TrdVN": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "date": "24/11/03",
+            "title": "ご注文多数につき、ご注文から５営業日以内に出荷します",
+            "link": "https://tsuchikaze.jp/blogs/tsuchikaze_news/2024-11-4"
+          }
+        },
+        "column_Lrhpf3": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "date": "24/8/26",
+            "title": "台風の接近によるお荷物のお届け遅延について",
+            "link": "shopify://blogs/tsuchikaze_news/台風の接近の影響によるお荷物のお届け遅延について"
+          }
+        }
+      },
+      "block_order": [
+        "column_wcnkmR",
+        "column_4RLAgM",
+        "column_Vj3Lbt",
+        "column_dhz8MM",
+        "column_yXFMdz",
+        "column_ExQXEc",
+        "column_UkzaTR",
+        "column_AxfCkL",
+        "column_H7HLyd",
+        "column_4TrdVN",
+        "column_Lrhpf3"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-2",
+        "padding_top": 16,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_XAYw9g": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_qYqPph": {
+          "type": "heading",
+          "settings": {
+            "heading": "新商品・ピックアップ",
+            "heading_size": "h2"
+          }
+        },
+        "text_ChkY6X": {
+          "type": "text",
+          "settings": {
+            "text": "<p>新たに登場したフレッシュボタニカルや期間限定のドライフラワーをご紹介。</p>"
+          }
+        },
+        "button_PP8BeX": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_qYqPph",
+        "text_ChkY6X",
+        "button_PP8BeX"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 68,
+        "padding_bottom": 20
+      }
+    },
+    "multicolumn_VGQJE7": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_VzGyKa": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Frame_2_1_-min.jpg",
+            "title": "【MAX50%OFF】夏のドライフラワー特別セール",
+            "text": "",
+            "link_label": "",
+            "link": "https://tsuchikaze.jp/collections/otoku"
+          }
+        },
+        "column_XVn9Lz": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/pickup_71_-min.jpg",
+            "title": "【予約販売10%0FF】パンパスグラスのドライフラワー",
+            "text": "<p>¥720〜</p>",
+            "link_label": "",
+            "link": "https://tsuchikaze.jp/collections/pampasgrass"
+          }
+        },
+        "column_hKrjBW": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/20250805__0012-min.jpg",
+            "title": "飾るだけでサマになる、ドライフラワーのセット",
+            "text": "<p>¥3,400〜</p>",
+            "link_label": "",
+            "link": "https://tsuchikaze.jp/collections/osusume_drybotanicals"
+          }
+        },
+        "column_LTUqYU": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/LINE_A_0807.jpg",
+            "title": "緑のドライフラワー",
+            "text": "<p>¥385〜</p>",
+            "link_label": "",
+            "link": "https://tsuchikaze.jp/collections/green"
+          }
+        },
+        "column_jrHbWe": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/pickup_67_-min_bd4572b4-19fc-434f-8d9f-bba450e39b68.jpg",
+            "title": "緑のドライフラワー",
+            "text": "<p>¥385〜</p>",
+            "link_label": "",
+            "link": "https://tsuchikaze.jp/collections/green"
+          }
+        },
+        "column_LCieqY": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/pickup_69_-min_1_9d40a206-ac09-4dd3-98a0-9a55f24cbe4c.jpg",
+            "title": "ドウダンツツジ　¥2,500〜",
+            "text": "",
+            "link_label": "",
+            "link": "https://tsuchikaze.jp/products/fresh-001"
+          }
+        },
+        "column_m3MYax": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/pickup_43_67d22dad-9c82-40ce-95be-523bc4bae82c.jpg",
+            "title": "ラベンダーのドライフラワー",
+            "text": "<p>¥1,950〜</p>",
+            "link_label": "",
+            "link": "https://tsuchikaze.jp/collections/lavender"
+          }
+        },
+        "column_HPYg7P": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/pickup_18_bc8548a7-16c0-4651-bd26-ff0ce6c6013d.jpg",
+            "title": "紫陽花　¥1,980〜",
+            "text": "",
+            "link_label": "",
+            "link": "https://tsuchikaze.jp/collections/hydrangea"
+          }
+        },
+        "column_AHCjEB": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/SNS_0813_2nd.jpg",
+            "title": "【8/17まで】5,500円以上で送料無料",
+            "text": "",
+            "link_label": "",
+            "link": "https://tsuchikaze.jp/blogs/tsuchikaze_news/202508soryo"
+          }
+        }
+      },
+      "block_order": [
+        "column_VzGyKa",
+        "column_XVn9Lz",
+        "column_hKrjBW",
+        "column_LTUqYU",
+        "column_jrHbWe",
+        "column_LCieqY",
+        "column_m3MYax",
+        "column_HPYg7P",
+        "column_AHCjEB"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 68
+      }
+    },
+    "rich_text_HBWqHn": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_pyDmPF": {
+          "type": "heading",
+          "settings": {
+            "heading": "定番のドライフラワー",
+            "heading_size": "h2"
+          }
+        },
+        "text_hBYLH4": {
+          "type": "text",
+          "settings": {
+            "text": "<p>土と風の植物園のドライフラワーは生き生きとした色合いが魅力 。<br/>岡山県倉敷市のアトリエでひとつひとつ丁寧に、手作りで作成しています。</p>"
+          }
+        },
+        "button_TGTnnV": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_pyDmPF",
+        "text_hBYLH4",
+        "button_TGTnnV"
+      ],
+      "settings": {
+        "color_scheme": "background-2",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 20
+      }
+    },
+    "multicolumn_yBQAR9": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_bVAzHc": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/pickup_23_4c95d35b-f2fc-4a2c-b6d6-330389d2c901.jpg",
+            "title": "オリジナルキャンドル　",
+            "text": "<p>￥2,350〜</p>",
+            "link_label": "",
+            "link": "https://tsuchikaze.jp/collections/original"
+          }
+        },
+        "column_R3qdNK": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/pickup_41_-min_3895470d-ba6b-431e-a0d1-9f194b171e44.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://tsuchikaze.jp/products/dry-040"
+          }
+        },
+        "column_AJxpnE": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/pickup-2025-01-24T192218.234-min.jpg",
+            "title": "フローリストおまかせスワッグ",
+            "text": "<p>¥5,500〜</p>",
+            "link_label": "",
+            "link": "https://tsuchikaze.jp/products/made-364"
+          }
+        },
+        "column_bgLVmQ": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/241001__FV_1080x1080-min.jpg",
+            "title": "お花のカーテン",
+            "text": "<p>¥1,350〜</p>",
+            "link_label": "",
+            "link": "https://tsuchikaze.jp/products/made-320"
+          }
+        },
+        "column_KNg77b": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/pickup_31_-min_ad22f1e3-690f-4936-a902-51999556bb43.jpg",
+            "title": "BIGボタニカル",
+            "text": "<p>¥1,800〜</p>",
+            "link_label": "",
+            "link": "https://tsuchikaze.jp/collections/big"
+          }
+        },
+        "column_Jhe6xP": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/pickup_4_-min.jpg",
+            "title": "季節のドライフラワー定期便　￥1,200～",
+            "text": "<p>心がほどける、手のひらサイズのドライフラワーを毎月お届け。サイズは２種類。</p>",
+            "link_label": "",
+            "link": "https://tsuchikaze.jp/pages/subscription-hb"
+          }
+        },
+        "column_Q7MkAb": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/pickup_69_-min_1.jpg",
+            "title": "雲竜柳　¥770〜",
+            "text": "",
+            "link_label": "",
+            "link": "https://tsuchikaze.jp/products/dry-002"
+          }
+        }
+      },
+      "block_order": [
+        "column_bVAzHc",
+        "column_R3qdNK",
+        "column_AJxpnE",
+        "column_bgLVmQ",
+        "column_KNg77b",
+        "column_Jhe6xP",
+        "column_Q7MkAb"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "すべてを表示する",
+        "button_link": "https://tsuchikaze.jp/collections/basic",
+        "color_scheme": "background-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 84
+      }
+    },
+    "1ad181bf-fccc-49fb-aa72-7d4363f2ca30": {
+      "type": "video-parallax",
+      "settings": {
+        "movie_url_pc": "https://cdn.shopify.com/videos/c/o/v/c4e466ca3c244e6a807b23f246bcfcd6.mp4",
+        "movie_img_pc": "shopify://shop_images/230605_029_-_-1-min_1.jpg",
+        "movie_url_sp": "https://cdn.shopify.com/videos/c/o/v/c4e466ca3c244e6a807b23f246bcfcd6.mp4",
+        "movie_img_sp": "shopify://shop_images/230605_029_-_-1_2-min.jpg"
+      }
+    },
+    "featured_collection_idNFAr": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "人気ランキング",
+        "heading_size": "h2",
+        "collection": "ranking",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "background-1",
+        "show_view_all": true,
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 44,
+        "padding_bottom": 40
+      }
+    },
+    "multicolumn_jzf69b": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_TxrmwM": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/250129line_2.jpg",
+            "title": "限定キャンペーン",
+            "text": "",
+            "link_label": "",
+            "link": "https://tsuchikaze.jp/discount/free"
+          }
+        },
+        "column_Nrb439": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/pickup_-_2025-01-29T171423.784-min.jpg",
+            "title": "新商品・再入荷",
+            "text": "",
+            "link_label": "",
+            "link": "shopify://collections/new"
+          }
+        },
+        "column_zBLCNc": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/LINE_1_c5b9ad47-d55b-4108-93ea-7495a0652287.jpg",
+            "title": "イベント情報",
+            "text": "<p> </p>",
+            "link_label": "",
+            "link": "https://tsuchikaze.jp/blogs/popup/250802"
+          }
+        },
+        "column_AKEW3z": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/pickup_3_-min_2143256d-f777-4c89-bbcc-6574be88ff9d.jpg",
+            "title": "SNSで人気",
+            "text": "",
+            "link_label": "",
+            "link": "https://tsuchikaze.jp/collections/sns"
+          }
+        },
+        "column_6kPTKb": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/pickup_5_-min_45224008-c735-4764-8131-c44245f6436b.jpg",
+            "title": "お得なまとめ買い",
+            "text": "",
+            "link_label": "",
+            "link": "https://tsuchikaze.jp/collections/matome"
+          }
+        },
+        "column_r3mKLn": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/pickup_4_-min_53a96fca-dfd5-46f3-b6c3-8148216ad2e8.jpg",
+            "title": "書籍を執筆しました",
+            "text": "",
+            "link_label": "",
+            "link": "https://tsuchikaze.jp/products/book-004"
+          }
+        },
+        "column_Lxpya6": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/pickup_6_-min.jpg",
+            "title": "送料無料アイテム",
+            "text": "",
+            "link_label": "",
+            "link": "https://tsuchikaze.jp/collections/freeshipping"
+          }
+        },
+        "column_8WynrF": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/pickup_7_-min.jpg",
+            "title": "花びん・雑貨・道具",
+            "text": "",
+            "link_label": "",
+            "link": "https://tsuchikaze.jp/collections/other"
+          }
+        },
+        "column_HKTLcr": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/pickup_21_-min.jpg",
+            "title": "店舗装飾",
+            "text": "",
+            "link_label": "",
+            "link": "https://tsuchikaze.jp/pages/dry-botanical"
+          }
+        }
+      },
+      "block_order": [
+        "column_TxrmwM",
+        "column_Nrb439",
+        "column_zBLCNc",
+        "column_AKEW3z",
+        "column_6kPTKb",
+        "column_r3mKLn",
+        "column_Lxpya6",
+        "column_8WynrF",
+        "column_HKTLcr"
+      ],
+      "settings": {
+        "title": "ピックアップ",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "https://tsuchikaze.jp/collections/sns",
+        "color_scheme": "background-1",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "multicolumn_NT4jft": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_mdCxej": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/240501_LINE_1___3_088c956e-fcb0-40db-910b-050a84dc8298.jpg",
+            "title": "",
+            "text": "<p>一輪挿しで愛しさ増す<br/>ドライボタニカル</p>",
+            "link_label": "",
+            "link": "shopify://collections/ichirin"
+          }
+        },
+        "column_kV37xV": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/set-053-2-min_f361f87a-5932-4fd0-a9d5-0d3c80e3f5b3.jpg",
+            "title": "",
+            "text": "<p>飾るだけでサマになる<br/>ドライボタニカルセット</p>",
+            "link_label": "",
+            "link": "shopify://collections/osusume_drybotanicals"
+          }
+        },
+        "column_beTTQn": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/20240507_0080-min.jpg",
+            "title": "",
+            "text": "<p>置くだけで暮らしを彩る<br/>ドライボタニカル</p>",
+            "link_label": "",
+            "link": "shopify://collections/okudake"
+          }
+        }
+      },
+      "block_order": [
+        "column_mdCxej",
+        "column_kV37xV",
+        "column_beTTQn"
+      ],
+      "settings": {
+        "title": "飾り方から探す",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "1652264561ce26017d": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_pTinr4": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/0799bbe7ce6f5e2e0cb6126243d9a15b.jpg",
+            "title": "",
+            "text": "<p>ドライボタニカル</p>",
+            "link_label": "",
+            "link": "https://tsuchikaze.jp/collections/drybotanical"
+          }
+        },
+        "column_E9P8P8": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/5a39ae8a5ce6bc38ea0d77f002cc6f3b.jpg",
+            "title": "",
+            "text": "<p>花束・スワッグ</p>",
+            "link_label": "",
+            "link": "https://tsuchikaze.jp/collections/swag"
+          }
+        },
+        "column_hmgfxi": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/c7e09eb708ca71a6cf0381a3653ac8b3.jpg",
+            "title": "",
+            "text": "<p>リース</p>",
+            "link_label": "",
+            "link": "shopify://collections/wreath"
+          }
+        },
+        "column_y3pDPp": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/ef3391b2657fbcafbed8f1a4fa6beb84.jpg",
+            "title": "",
+            "text": "<p>花びん</p>",
+            "link_label": "",
+            "link": "shopify://collections/flowerbase"
+          }
+        },
+        "column_RnUpRw": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/0dbeec70524d9b77c497def215a298b0.jpg",
+            "title": "",
+            "text": "<p>雑貨・インテリア</p>",
+            "link_label": "",
+            "link": "shopify://collections/zakka"
+          }
+        },
+        "column_WyzDKC": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/2891ea43ba1c31ea2fca1d8b0a11d3c4.jpg",
+            "title": "",
+            "text": "<p>キャンドル</p>",
+            "link_label": "",
+            "link": "shopify://collections/original"
+          }
+        },
+        "column_k8xAC7": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/2e77f365bc0864aec5104465e4664491.png",
+            "title": "",
+            "text": "<p>標本・ポプリ</p>",
+            "link_label": "",
+            "link": "shopify://collections/hyouhonn-popuri-hanakago"
+          }
+        },
+        "column_bEnAXn": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/7817d465c2ef7a036d779a8d5a0bd28a.jpg",
+            "title": "",
+            "text": "<p>アクセサリー</p>",
+            "link_label": "",
+            "link": "shopify://collections/accessory"
+          }
+        },
+        "column_U9qqhE": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/9d6689ab81c5c83e7725a211321e49c5.jpg",
+            "title": "",
+            "text": "<p>書籍</p>",
+            "link_label": "",
+            "link": "shopify://collections/book"
+          }
+        },
+        "column_9L9FKT": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/f683080bde368f669999257949be7fdf.jpg",
+            "title": "",
+            "text": "<p>道具</p>",
+            "link_label": "",
+            "link": "shopify://collections/material"
+          }
+        }
+      },
+      "block_order": [
+        "column_pTinr4",
+        "column_E9P8P8",
+        "column_hmgfxi",
+        "column_y3pDPp",
+        "column_RnUpRw",
+        "column_WyzDKC",
+        "column_k8xAC7",
+        "column_bEnAXn",
+        "column_U9qqhE",
+        "column_9L9FKT"
+      ],
+      "settings": {
+        "title": "カテゴリから探す",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 5,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
+    },
+    "custom_liquid_NnM6rm": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"page-width\"><a class=\"link -e-opacity\" href=\"https://tsuchikaze.jp/pages/dry-botanical\"><img src=\"https://cdn.shopify.com/s/files/1/0440/0637/5579/files/dry-botanical-bnr.jpg?v=1714469900\" class=\"hidden-xs\" alt=\"顧客さまとの縁を結ぶドライボタニカル\" style=\"width:100%;\"><img src=\"https://cdn.shopify.com/s/files/1/0440/0637/5579/files/4a9821b96bda08a3492783423965de90.jpg?v=1714472177\" class=\"visible-xs\" alt=\"顧客さまとの縁を結ぶドライボタニカル\" style=\"width:100%;\"></a></div>",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "16522731302e180c6f": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "店主のイチオシ",
+        "heading_size": "h2",
+        "collection": "staffosusume",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "background-1",
+        "show_view_all": true,
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 76,
+        "padding_bottom": 72
+      }
+    },
+    "1656054113ba75194e": {
+      "type": "multicolumn",
+      "blocks": {
+        "16560541121d5b9dd2-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/0718_2_1_min.jpg",
+            "title": "身近なアイテムでひと味違うドライボタニカルの飾り方",
+            "text": "<p>家の中にある日用品や、リサイクルに出すようなアイテムにドライボタニカルを飾っても、とても素敵。</p>",
+            "link_label": "",
+            "link": "https://tsuchikaze.jp/blogs/dryflower/unique"
+          }
+        },
+        "column_XXAaJ9": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/SDIM36683.jpg",
+            "title": "【過去のイベント】＜ワークショップ開催しました＞",
+            "text": "<p>2024年6月22日(土)に、摘みたてラベンダーでアレンジメントを作るワークショップを開催しましたので、その様子をお届けします。</p>",
+            "link_label": "",
+            "link": "shopify://blogs/popup/lavender"
+          }
+        },
+        "16560541121d5b9dd2-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/20240423_0054-min.jpg",
+            "title": "定期便でお届けしたお花をご紹介",
+            "text": "<p>お花のある暮らしを楽しんでほしい。<br/>その季節にぴったりなドライフラワー5種をお届けするサブスクリプションサービス。<br/>お花の種類や飾り方、アレンジ方法をご紹介します。</p>",
+            "link_label": "",
+            "link": "https://tsuchikaze.jp/blogs/subscription_bn"
+          }
+        },
+        "column_WHjqNf": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/240125_flower_valentine_fc0cfabe-5345-49d6-a421-94b8f19dff6a.jpg",
+            "title": "実際にお届けしたおまかせスワッグ",
+            "text": "<p>大切な方への贈りものだからこそ、その人にピッタリで笑顔になってくれるものをお届けしたい。<br/>ご要望に沿ってお花を選び、ひとつひとつお作りします。</p>",
+            "link_label": "",
+            "link": "https://tsuchikaze.jp/blogs/dryflower/florist_swag_2401"
+          }
+        },
+        "column_PYrGUj": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/R4_00121.jpg",
+            "title": "ミモザの巨大リースを装飾しました",
+            "text": "<p>「春を告げる花」ミモザで作成した冬の太陽。土と風の植物園では、空間に彩りを添える、ディスプレイ装飾承っております。</p>",
+            "link_label": "",
+            "link": "shopify://blogs/tsuchikaze_news/240220"
+          }
+        },
+        "column_NxP6DG": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/2-min_07979799-5419-4fe6-bc8b-35482629a2f9.jpg",
+            "title": "春の訪れを感じてみませんか",
+            "text": "<p>開催期間：2月10日(土)～3月14日(木)<br/>中目黒 蔦屋書店さまにてPOP UP を開催中。<br/>温かな黄色いミモザの花を中心に、春を感じるお花やドライフラワーをたくさんご用意しています。</p>",
+            "link_label": "",
+            "link": "shopify://blogs/popup/20240210"
+          }
+        },
+        "column_TTBE9R": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/230113____-min_2_86b6b4b6-9841-4b39-a4fa-91694bb7cff4.jpg",
+            "title": "“水分を抜く”ことで生まれる新たな色の世界",
+            "text": "<p>アトリエに溢れる、何百、何千という色彩。美しい色合いのドライフラワーを生み出すための秘密のこだわりとは？</p>",
+            "link_label": "",
+            "link": "https://tsuchikaze.jp/blogs/dryflower/colorful"
+          }
+        },
+        "16560541121d5b9dd2-1": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/3-min_04c02432-4dc8-46cd-ae2e-b45dfef6ba12.jpg",
+            "title": "フラワーバレンタインとは？",
+            "text": "<p>最近は日本でも、バレンタインにフラワーギフトを贈る『フラワーバレンタイン』が徐々に広まっています。<br/>おすすめのフラワーギフトや花言葉をご紹介します。</p>",
+            "link_label": "",
+            "link": "https://tsuchikaze.jp/blogs/dryflower/flowervalentine"
+          }
+        },
+        "column_qjFDEy": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bn_top_sp_211026-min_d0926730-91ee-4ac4-8358-f2268461c372.webp",
+            "title": "障がい者就労継続支援事業所との取り組み",
+            "text": "<p>土と風の植物園の新たなスタッフになっていただいた感覚で、取り組んでいただいています。</p>",
+            "link_label": "",
+            "link": "shopify://blogs/tsuchikaze_news/tryteikibin"
+          }
+        }
+      },
+      "block_order": [
+        "16560541121d5b9dd2-2",
+        "column_XXAaJ9",
+        "16560541121d5b9dd2-0",
+        "column_WHjqNf",
+        "column_PYrGUj",
+        "column_NxP6DG",
+        "column_TTBE9R",
+        "16560541121d5b9dd2-1",
+        "column_qjFDEy"
+      ],
+      "settings": {
+        "title": "読みもの・お知らせ",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 16,
+        "padding_bottom": 24
+      }
+    },
+    "rich_text_UTYrmJ": {
+      "type": "rich-text",
+      "blocks": {
+        "button_wN4Jxi": {
+          "type": "button",
+          "settings": {
+            "button_label": "他の記事を見る",
+            "button_link": "shopify://blogs/tsuchikaze_news",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "button_wN4Jxi"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 4,
+        "padding_bottom": 28
+      }
+    },
+    "1657526730c9861b49": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"page-width\">\n<div class=\"review-container\" data-action=\"slider\" data-review-type=\"product\" data-review-count=\"10\" data-autoplay=\"1\" data-autoplay-speed=\"5000\"\n\n></div>\n</div>",
+        "color_scheme": "background-1",
+        "padding_top": 40,
+        "padding_bottom": 20
+      }
+    },
+    "165309405044e30159": {
+      "type": "multicolumn",
+      "blocks": {
+        "1653094050b0184562-0": {
+          "type": "column",
+          "settings": {
+            "title": "7,000円以上のご購入で送料無料",
+            "text": "<p>＊定期便：全国一律送料無料<br/>＊本州・四国・九州：送料800円<br/>＊北海道・沖縄県：送料1,800円<br/>7,000円(税込)以上のご購入：送料無料</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1653094050b0184562-1": {
+          "type": "column",
+          "settings": {
+            "title": "送料無料アイテムもあります",
+            "text": "<p>全国一律送料無料でお届けします。<br/>・<a href=\"/pages/subscription\" title=\"季節のドライフラワー定期便\">ドライフラワー定期便</a><br/>・<a href=\"https://tsuchikaze.jp/products/hanakuzu-001\" title=\"https://tsuchikaze.jp/products/hanakuzu-001\">花屑のドライフラワー</a><br/>・<a href=\"https://tsuchikaze.jp/products/set-004-set-005-set-006\" title=\"https://tsuchikaze.jp/products/set-004-set-005-set-006\">ドライフラワーおためしセット</a></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1653094050b0184562-2": {
+          "type": "column",
+          "settings": {
+            "title": "天然のドライフラワーです",
+            "text": "<p>ドライフラワーは自然なものです。<br/>そのため、ひとつひとつ大きさや色味、カタチが異なります。<br/>その個体差をおたのしみください。</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1653094050b0184562-0",
+        "1653094050b0184562-1",
+        "1653094050b0184562-2"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_liquid_RVe4Cz": {
+      "type": "custom-liquid",
+      "custom_css": [
+        "{padding-left: 15px; /* 左だけ指定 */ padding-right: 15px; /* 右だけ指定 */}"
+      ],
+      "settings": {
+        "custom_liquid": "<div class=\"gallery-pictures-container\" data-gallery-id=\"1371\" ></div>",
+        "color_scheme": "background-1",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "ed4458d0-d8f8-4900-92a1-386c92e9364d": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<center><iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3740.185595480033!2d133.79326194604545!3d34.59519417576507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3553fdeae5d5c23b%3A0x11255c2e312a9aa6!2z5Zyf44Go6aKo44Gu5qSN54mp5ZySIOODleOCoeOCr-ODiOODquODvOOCueODiOOCog!5e0!3m2!1sja!2sjp!4v1695100364699!5m2!1sja!2sjp\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe></center>",
+        "color_scheme": "background-1",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "166190620417471e2c",
+    "featured_collection_bR78Tj",
+    "rich_text_Hpz4Gb",
+    "news_multicolumn_8EBcYG",
+    "rich_text_XAYw9g",
+    "multicolumn_VGQJE7",
+    "rich_text_HBWqHn",
+    "multicolumn_yBQAR9",
+    "1ad181bf-fccc-49fb-aa72-7d4363f2ca30",
+    "featured_collection_idNFAr",
+    "multicolumn_jzf69b",
+    "multicolumn_NT4jft",
+    "1652264561ce26017d",
+    "custom_liquid_NnM6rm",
+    "16522731302e180c6f",
+    "1656054113ba75194e",
+    "rich_text_UTYrmJ",
+    "1657526730c9861b49",
+    "165309405044e30159",
+    "custom_liquid_RVe4Cz",
+    "ed4458d0-d8f8-4900-92a1-386c92e9364d"
+  ]
+}

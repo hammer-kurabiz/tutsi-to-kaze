@@ -1,0 +1,94 @@
+<div class="fv-wrap">
+  <!-- Slider main container -->
+  <div class="swiper swiper-fv-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      {%- for block in section.blocks -%}
+      <div class="swiper-slide">
+        {% if block.settings.my_url_name != blank %}
+        	<a class="link" href="{{ block.settings.my_url_name }}">
+        {% endif %}
+              	<div class="fv-img-wrapper">
+                  <div class="fv-slider{% if block.settings.swiper_img_sp != blank %} hidden-sp{% endif %}">
+                      <img  class="ofi -cover" src="{{ block.settings.swiper_img_pc  | img_url: "master" }}" alt="{{ block.settings.swiper_img_pc.alt }}">
+                  </div>
+                  {% if block.settings.swiper_img_sp != blank %}
+	                  <div class="fv-slider visible-sp">
+                        <img  class="ofi -cover" src="{{ block.settings.swiper_img_sp  | img_url: "master" }}" alt=""{{ block.settings.swiper_img_sp.alt }}">
+    	              </div>
+                  {% endif %}
+              	</div>
+              {% if block.settings.my_url_name != blank %}
+        </a>
+        {% endif %}
+       </div>
+      {%- endfor -%}
+    </div>
+  </div>
+    <div class="swiper-pagination"></div>
+</div>
+<script src="{{ 'swiper.js' | asset_url }}"></script>
+  <script>
+	/* fv slider*/
+        const swiper2 = new Swiper('.swiper-fv-container', {
+            effect: "fade",
+            direction: 'horizontal',
+            loop: true,
+            speed: 3000,
+            slidesPerView: 1,
+            loopedSlides: 4,
+            autoplay: { delay: 3000, disableOnInteraction: false, },
+            breakpoints: {
+                767: {
+                    effect: "fade",
+                    direction: 'horizontal',
+                    loop: true,
+                    speed: 3000,
+                    slidesPerView: 1,
+                    loopedSlides: 4,
+                    autoplay: { delay: 3000, disableOnInteraction: false, }
+                },
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+                clickable: true
+            }
+        });
+  </script>
+{% schema %}
+{
+  "name":  "FVスライド",
+  "class": "slider index-section--slideshow-swiper",
+  "blocks": [
+    {
+      "type": "image_picker",
+      "name":  "FV画像",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "swiper_img_pc",
+          "label":"FV（PC）"
+        },
+		{
+          "type": "image_picker",
+          "id": "swiper_img_sp",
+          "label":"FV（SP）"
+        },
+        {
+          "type": "url",
+            "id": "my_url_name",
+            "label": "URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+      {
+        "name": "FVスライド",
+        "category": "画像"
+      }
+    ]
+}
+{% endschema %}

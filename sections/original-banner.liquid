@@ -1,0 +1,51 @@
+<div class="original-banner">
+  <a class="link -e-opacity" href="{{ section.settings.original_bnr_url }}" {% if section.settings.target == true %} target="_blank" rel="noopener noreferrer"{% endif %} style="line-height: 1;">
+    <img class="ofi -contain hidden-sp" src="{{ section.settings.original_bnr_img_pc  | img_url: "master" }}" alt="{% if section.settings.target == true %}{{ section.settings.original_bnr_alt }}{% endif %}">
+    {% if section.settings.original_bnr_img_sp %}
+    <img class="ofi -contain visible-sp" src="{{ section.settings.original_bnr_img_sp  | img_url: "master" }}" alt="{% if section.settings.target == true %}{{ section.settings.original_bnr_alt }}{% endif %}">
+    {% else %}
+    <img class="ofi -contain visible-sp" src="{{ section.settings.original_bnr_img_pc  | img_url: "master" }}" alt="{% if section.settings.target == true %}{{ section.settings.original_bnr_alt }}{% endif %}">
+    {% endif %}
+  </a>
+</div>
+  {% schema %}
+    {
+    "name":  "オリジナルバナー",
+    "class": "original_banner",
+  
+    "settings": [
+		{
+            "type": "image_picker",
+            "id": "original_bnr_img_pc",
+            "label": "バナー画像PC"
+          },
+		{
+            "type": "image_picker",
+            "id": "original_bnr_img_sp",
+            "label": "バナー画像SP"
+          },
+		{
+            "type": "text",
+            "id": "original_bnr_alt",
+            "label": "altテキスト"
+          },
+		{
+            "type": "url",
+            "id": "original_bnr_url",
+            "label": "URL"
+          },
+        {
+            "type": "checkbox",
+            "id": "target",
+            "label": "別タブで開く",
+            "default": false
+          }
+    ],
+    "presets": [
+        {
+          "name": "オリジナルバナー",
+          "category": "高度なレイアウト"
+        }
+      ]
+  }
+  {% endschema %}

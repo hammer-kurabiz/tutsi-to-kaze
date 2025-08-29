@@ -1,0 +1,116 @@
+{%- for block in section.blocks -%}
+  {%- case block.type -%}
+    {%- when 'announcement' -%}
+      <div class="announcement-bar color-{{ block.settings.color_scheme }} gradient" role="region" aria-label="{{ 'sections.header.announcement' | t }}" {{ block.shopify_attributes }}>
+        {%- if block.settings.text != blank -%}
+          {%- if block.settings.link != blank -%}
+            <a href="{{ block.settings.link }}" class="announcement-bar__link link link--text focus-inset animate-arrow">
+          {%- endif -%}
+              <p class="announcement-bar__message h5">
+                {{ block.settings.text | escape }}
+                {%- if block.settings.link != blank -%}
+                  {% render 'icon-arrow' %}
+                {%- endif -%}
+              </p>
+          {%- if block.settings.link != blank -%}
+            </a>
+          {%- endif -%}
+        {%- else -%}
+          <!-- あと◯円で送料無料 start -->
+          <a href="https://tsuchikaze.jp/collections/all" class="announcement-bar__link link link--text focus-inset animate-arrow">
+            <p class="announcement-bar__message h5">
+              {%- assign total = 0 -%}
+              {%- for item in cart.items -%}{% #カートの商品を1つずつ確認 %}
+                {%- assign kakunin = true -%}
+                {%- for collection in item.product.collections -%}{% #各商品のコレクションを配列で返す %}
+                  {%- if collection.title contains "ドライフラワー定期便" or collection.title contains "送料無料商品" or collection.title contains "イベント" -%}{% #コレクションに「ドライフラワー定期便」「送料無料商品」「イベント」のいずれかが含まれていればfalseを返す %}
+                    {%- if cart.item_count < 2 -%}
+                      {%- assign kakunin = false -%}
+                      {%- break -%}
+                    {%- endif -%}
+                  {%- endif -%}
+                {%- endfor -%}
+                {%- unless item.requires_shipping -%}{% #「配送が必要な商品です」にチェックが入っていなかったら %}
+                  {%- assign kakunin = false -%}
+                {%- endunless -%}
+                {%- if kakunin -%}{% #kakuninがtrueなら %}
+                  {%- assign quantity = item.quantity -%}{% #その商品のカート内の個数 %}
+                  {%- assign price = item.price | money | replace: "¥", "" | replace: ",", "" | times: quantity -%}{% #変数から「¥」と「,」を削除して、times:でその商品の個数分をかける %}
+                  {%- assign total = total | plus: price -%}{% #total変数に金額を足していく %}
+                {%- endif -%}
+              {%- endfor -%}
+              {%- if total < 7000 and total >= 1 -%}{% #トータル金額が7000円未満の場合 %}
+                {%- assign free = 7000 | minus: total -%}{% #7000からトータル金額を引いた数値を変数にセット %}
+                  あと{{ free }}円で<span style="font-weight:bold;">送料無料</span>
+              {%- else -%}
+                  7,000円以上で送料無料
+              {%- endif -%}
+              {% render 'icon-arrow' %}
+            </p>
+          </a>
+          <!-- あと◯円で送料無料 end -->
+        {%- endif -%}
+      </div>
+  {%- endcase -%}
+{%- endfor -%}
+
+{% schema %}
+{
+  "name": "t:sections.announcement-bar.name",
+  "max_blocks": 12,
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "t:sections.announcement-bar.blocks.announcement.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "default": "Welcome to our store",
+          "label": "t:sections.announcement-bar.blocks.announcement.settings.text.label"
+        },
+        {
+          "type": "select",
+          "id": "color_scheme",
+          "options": [
+            {
+              "value": "background-1",
+              "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.options__1.label"
+            },
+            {
+              "value": "background-2",
+              "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.options__2.label"
+            },
+            {
+              "value": "inverse",
+              "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.options__3.label"
+            },
+            {
+              "value": "accent-1",
+              "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.options__4.label"
+            },
+            {
+              "value": "accent-2",
+              "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.options__5.label"
+            }
+          ],
+          "default": "accent-1",
+          "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.label"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:sections.announcement-bar.blocks.announcement.settings.link.label"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "announcement"
+      }
+    ]
+  }
+}
+{% endschema %}
