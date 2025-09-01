@@ -1,94 +1,120 @@
-<div class="fv-wrap">
-  <!-- Slider main container -->
+{% comment %} 
+  このセクションでSwiper.jsを使用します。
+  theme.liquidで既に読み込まれている場合は不要ですが、
+  セクションの独立性を保つために記述しておきます。
+{% endcomment %}
+{{ 'swiper.js' | asset_url | script_tag }}
+
+<fv-slider-section class="fv-wrap">
   <div class="swiper swiper-fv-container">
-    <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
-      <!-- Slides -->
       {%- for block in section.blocks -%}
-      <div class="swiper-slide">
-        {% if block.settings.my_url_name != blank %}
-        	<a class="link" href="{{ block.settings.my_url_name }}">
-        {% endif %}
-              	<div class="fv-img-wrapper">
-                  <div class="fv-slider{% if block.settings.swiper_img_sp != blank %} hidden-sp{% endif %}">
-                      <img  class="ofi -cover" src="{{ block.settings.swiper_img_pc  | img_url: "master" }}" alt="{{ block.settings.swiper_img_pc.alt }}">
-                  </div>
-                  {% if block.settings.swiper_img_sp != blank %}
-	                  <div class="fv-slider visible-sp">
-                        <img  class="ofi -cover" src="{{ block.settings.swiper_img_sp  | img_url: "master" }}" alt=""{{ block.settings.swiper_img_sp.alt }}">
-    	              </div>
-                  {% endif %}
-              	</div>
-              {% if block.settings.my_url_name != blank %}
-        </a>
-        {% endif %}
-       </div>
+        <div class="swiper-slide">
+          {%- liquid
+            assign has_link = false
+            if block.settings.my_url_name != blank
+              assign has_link = true
+            endif
+          -%}
+          {%- if has_link -%}
+            <a class="link" href="{{ block.settings.my_url_name }}">
+          {%- endif -%}
+          
+          <div class="fv-img-wrapper">
+            {%- liquid
+              assign mobile_image = block.settings.swiper_img_sp
+              assign desktop_image = block.settings.swiper_img_pc
+            -%}
+            
+            <picture>
+              {%- if mobile_image != blank -%}
+                <source media="(max-width: 767px)" srcset="{{ mobile_image | image_url: width: 1200 }}">
+              {%- endif -%}
+              <img 
+                class="ofi -cover" 
+                src="{{ desktop_image | image_url: width: 2400 }}" 
+                alt="{{ desktop_image.alt | escape }}"
+                loading="eager"
+                fetchpriority="high"
+                width="{{ desktop_image.width }}"
+                height="{{ desktop_image.height }}"
+              >
+            </picture>
+          </div>
+
+          {%- if has_link -%}
+            </a>
+          {%- endif -%}
+        </div>
       {%- endfor -%}
     </div>
-  </div>
     <div class="swiper-pagination"></div>
-</div>
-<script src="{{ 'swiper.js' | asset_url }}"></script>
-  <script>
-	/* fv slider*/
-        const swiper2 = new Swiper('.swiper-fv-container', {
-            effect: "fade",
-            direction: 'horizontal',
-            loop: true,
-            speed: 3000,
-            slidesPerView: 1,
-            loopedSlides: 4,
-            autoplay: { delay: 3000, disableOnInteraction: false, },
-            breakpoints: {
-                767: {
-                    effect: "fade",
-                    direction: 'horizontal',
-                    loop: true,
-                    speed: 3000,
-                    slidesPerView: 1,
-                    loopedSlides: 4,
-                    autoplay: { delay: 3000, disableOnInteraction: false, }
-                },
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                type: 'bullets',
-                clickable: true
-            }
-        });
-  </script>
+  </div>
+</fv-slider-section>
+
+{%- javascript -%}
+  class FvSlider extends HTMLElement {
+    constructor() {
+      super();
+      this.swiperContainer = this.querySelector('.swiper-fv-container');
+      if (!this.swiperContainer || typeof Swiper === 'undefined') return;
+
+      this.initSwiper();
+    }
+
+    initSwiper() {
+      const swiper = new Swiper(this.swiperContainer, {
+        effect: "fade",
+        loop: true,
+        speed: 2000,
+        autoplay: { 
+          delay: 4000, 
+          disableOnInteraction: false 
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        }
+      });
+    }
+  }
+  customElements.define('fv-slider-section', FvSlider);
+{%- endjavascript -%}
+
 {% schema %}
 {
   "name":  "FVスライド",
-  "class": "slider index-section--slideshow-swiper",
+  "class": "index-section--slideshow-swiper",
+  "max_blocks": 10,
   "blocks": [
     {
       "type": "image_picker",
-      "name":  "FV画像",
+      "name":  "スライド画像",
       "settings": [
         {
           "type": "image_picker",
           "id": "swiper_img_pc",
-          "label":"FV（PC）"
+          "label":"画像（PC）"
         },
-		{
+        {
           "type": "image_picker",
           "id": "swiper_img_sp",
-          "label":"FV（SP）"
+          "label":"画像（スマホ）",
+          "info": "設定しない場合はPCと同じ画像が表示されます。"
         },
         {
           "type": "url",
-            "id": "my_url_name",
-            "label": "URL"
+          "id": "my_url_name",
+          "label": "リンク先URL"
         }
       ]
     }
   ],
   "presets": [
-      {
-        "name": "FVスライド",
-        "category": "画像"
-      }
-    ]
+    {
+      "name": "FVスライド",
+      "category": "画像"
+    }
+  ]
 }
 {% endschema %}
