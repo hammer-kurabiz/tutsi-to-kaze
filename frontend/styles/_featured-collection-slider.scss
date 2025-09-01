@@ -1,0 +1,130 @@
+.featured-collection-slider{
+    overflow: hidden;
+}
+
+.featured-collection {
+    padding: 6rem 0;
+    position: relative; // 矢印の位置の基準
+    padding-inline: 3rem;
+    max-width: 120rem;
+
+    @media (min-width: 768px){
+        width: 90%;
+        padding: 8rem 0;
+    }
+
+    @media (min-width: 992px){
+        padding: 12rem 0;
+    }
+
+    &__title-wrapper {
+        margin-bottom: 3rem;
+        position: relative;
+    }
+
+    &__heading {
+        font-size: 1.8rem;
+        letter-spacing: .15rem;
+        z-index: 2;
+        margin-block: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-75%);
+
+        @media (min-width: 768px){
+            font-size: 2.2rem;
+            left: 3rem;
+        }
+    }
+
+    &__subheading {
+        font-size: 5rem;
+        line-height: 1;
+        color: #f4f5f5;
+        margin-block: 0;
+
+        @media (min-width: 768){
+            font-size: 10rem;
+        }
+
+        @media (min-width: 1200px){
+            font-size: 13rem;
+        }
+    }
+
+    &__button-wrapper {
+        text-align: center;
+        margin-top: 4rem;
+
+        a{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 auto;
+            padding: 1em 2em;
+            width: 300px;
+            color: #5a5c5e;
+            font-size: 18px;
+            font-weight: 700;
+            background-color: #fff;
+            border: solid 1px #5a5c5e;
+            border-radius: 50vh;
+            &::after {
+                content: '';
+                width: 5px;
+                height: 5px;
+                border-top: 3px solid #5a5c5e;
+                border-right: 3px solid #5a5c5e;
+                box-shadow: none;
+                transform: rotate(45deg);
+                position: relative;
+            }
+        }
+    }
+
+    // --- Swiper.jsの矢印スタイル ---
+    &__slider {
+        padding: 0 1rem; // 矢印が見切れないように少し余白
+        overflow: unset !important;
+
+        @media (min-width: 750px) {
+            padding: 0 2rem;
+        }
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        background-color: #fff;
+        border-radius: 50%;
+        border: 1px solid #5a5c5e;
+        top: 40%; // カードの中央あたりに配置
+
+        &::after {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #5a5c5e;
+        }
+
+        &:hover {
+            background-color: #f5f5f5;
+        }
+
+        &.swiper-button-disabled{
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+
+    // 位置調整
+    .swiper-button-prev {
+        left: 0;
+    }
+    .swiper-button-next {
+        right: 0;
+    }
+}
