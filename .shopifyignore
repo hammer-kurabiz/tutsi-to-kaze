@@ -2,13 +2,13 @@
 config/settings_data.json
 
 # Git関連のファイル
-.git/
+.git/*
 .gitignore
 README.md
 
-# Viteの開発用ソースフォルダ
-frontend/
-node_modules/
+# Viteの開発用ソースフォルダと関連ファイル
+frontend/*
+node_modules/*
 package.json
 package-lock.json
 vite.config.js
