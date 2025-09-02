@@ -56,6 +56,62 @@
         "button_link": "shopify://collections/big"
       }
     },
+    "featured_grid_7RcH7h": {
+      "type": "featured-grid",
+      "blocks": {
+        "featured_item_MLwThT": {
+          "type": "featured_item",
+          "settings": {
+            "image": "shopify://shop_images/recommend-img01.jpg",
+            "pre_heading": "世界でたったひとつの花束",
+            "heading": "フローリストおまかせスワッグ",
+            "link": "",
+            "text_position": "top-left"
+          }
+        },
+        "featured_item_xiPXMJ": {
+          "type": "featured_item",
+          "settings": {
+            "image": "shopify://shop_images/recommend-img02.jpg",
+            "pre_heading": "空間を引き立てる",
+            "heading": "大きな植物",
+            "link": "",
+            "text_position": "top-right"
+          }
+        },
+        "featured_item_RfEfkN": {
+          "type": "featured_item",
+          "settings": {
+            "image": "shopify://shop_images/recommend-img03.jpg",
+            "pre_heading": "7月のおすすめ",
+            "heading": "ラベンダー",
+            "link": "",
+            "text_position": "bottom-left"
+          }
+        },
+        "featured_item_zb3aWP": {
+          "type": "featured_item",
+          "settings": {
+            "image": "shopify://shop_images/recommend-img04.jpg",
+            "pre_heading": "",
+            "heading": "フラワーベース",
+            "link": "",
+            "text_position": "bottom-right"
+          }
+        }
+      },
+      "block_order": [
+        "featured_item_MLwThT",
+        "featured_item_xiPXMJ",
+        "featured_item_RfEfkN",
+        "featured_item_zb3aWP"
+      ],
+      "name": "【カスタム】特集グリッド",
+      "settings": {
+        "heading": "当店のイチオシ",
+        "subheading": "RECOMMEND"
+      }
+    },
     "rich_text_Hpz4Gb": {
       "type": "rich-text",
       "blocks": {
@@ -1097,6 +1153,7 @@
   "order": [
     "166190620417471e2c",
     "featured_collection_slider_hTBApY",
+    "featured_grid_7RcH7h",
     "rich_text_Hpz4Gb",
     "news_multicolumn_8EBcYG",
     "rich_text_XAYw9g",
