@@ -36,11 +36,12 @@
         </div>
 
         <div class="card-product__info">
-            {%- if product_card.metafields.custom.size != blank -%}
-                <p class="card-product__meta">{{ product_card.metafields.custom.size }}</p>
-            {%- endif -%}
-            
-            <h3 class="card-product__title">{{ product_card.title }}</h3>
+            <div class="card-product__info-head">
+                <h3 class="card-product__title">{{ product_card.title }}</h3>
+                {%- if product_card.metafields.custom.size != blank -%}
+                    <p class="card-product__meta">{{ product_card.metafields.custom.size }}</p>
+                {%- endif -%}
+            </div>
 
             {%- if product_card.metafields.custom.genre != blank -%}
                 <p class="card-product__meta">{{ product_card.metafields.custom.genre }}</p>

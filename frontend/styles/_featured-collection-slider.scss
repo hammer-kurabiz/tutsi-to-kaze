@@ -54,32 +54,7 @@
 
     &__button-wrapper {
         text-align: center;
-        margin-top: 4rem;
-
-        a{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 0 auto;
-            padding: 1em 2em;
-            width: 300px;
-            color: #5a5c5e;
-            font-size: 18px;
-            font-weight: 700;
-            background-color: #fff;
-            border: solid 1px #5a5c5e;
-            border-radius: 50vh;
-            &::after {
-                content: '';
-                width: 5px;
-                height: 5px;
-                border-top: 3px solid #5a5c5e;
-                border-right: 3px solid #5a5c5e;
-                box-shadow: none;
-                transform: rotate(45deg);
-                position: relative;
-            }
-        }
+        margin-top: 6rem;
     }
 
     // --- Swiper.jsの矢印スタイル ---

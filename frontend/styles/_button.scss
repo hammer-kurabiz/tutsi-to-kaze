@@ -1,0 +1,30 @@
+.button-custom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 1em 2em;
+    width: 300px;
+    color: #5a5c5e;
+    font-size: 1.6rem;
+    font-weight: 500;
+    background-color: #fff;
+    border: solid 1px #5a5c5e;
+    border-radius: 100vmax;
+    text-decoration: none;
+    transition: .3s cubic-bezier(0.4, 0, 1, 1);
+    &:hover{
+        color: var(--gradient-base-accent-1);
+        background-color: #f4f5f5;
+    }
+    &::after {
+        content: '';
+        width: 6px;
+        aspect-ratio: 1;
+        border-top: 1px solid #5a5c5e;
+        border-right: 1px solid #5a5c5e;
+        box-shadow: none;
+        transform: rotate(45deg);
+        position: relative;
+    }
+}

@@ -1,0 +1,13 @@
+{% comment %}
+  必須パラメータ:
+  - url: リンク先のURL
+  - label: ボタンのテキスト
+
+  任意パラメータ:
+  - class: 追加したいCSSクラス名
+  - style: 'secondary' などのスタイル修飾子
+{% endcomment %}
+
+<a href="{{ url | default: '#' }}" class="button-custom {{ class }}">
+  {{ label | default: 'Button' }}
+</a>

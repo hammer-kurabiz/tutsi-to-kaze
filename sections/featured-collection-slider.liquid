@@ -42,11 +42,9 @@
                 <div class="swiper-button-next"></div>
             </div>
 
-            {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
+            {%- if section.settings.button_label != blank and section.settings.collection.url != blank -%}
                 <div class="featured-collection__button-wrapper">
-                    <a href="{{ section.settings.button_link }}" class="button button--secondary">
-                        {{ section.settings.button_label }}
-                    </a>
+                    {%- render 'button-custom', label: section.settings.button_label, url: section.settings.collection.url -%}
                 </div>
             {%- endif -%}
         </div>
