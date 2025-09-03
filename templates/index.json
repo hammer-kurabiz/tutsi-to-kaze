@@ -50,6 +50,9 @@
       "settings": {
         "heading": "空間を引き立てる大きな植物",
         "subheading": "BIG BOTANICAL",
+        "title_text_alignment": "left",
+        "title_padding_top": 30,
+        "title_padding_bottom": 30,
         "collection": "manabu",
         "products_to_show": 8,
         "button_label": "詳しく見る",

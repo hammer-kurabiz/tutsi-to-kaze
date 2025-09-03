@@ -1,0 +1,62 @@
+/* =================================================================
+    コンポーネント：セクションタイトル
+================================================================= */
+
+.section-title {
+    position: relative;
+    padding-top: var(--padding-top-mobile);
+    padding-bottom: var(--padding-bottom-mobile);
+
+    @media (min-width: 768px) {
+        padding-top: var(--padding-top-desktop);
+        padding-bottom: var(--padding-bottom-desktop);
+    }
+
+    &--center {
+        text-align: center;
+
+        .section-title__heading {
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &--left {
+        text-align: left;
+
+        .section-title__heading {
+            left: 2.5%;
+            transform: translateY(-75%);
+        }
+    }
+
+    &__heading {
+        font-size: 1.8rem;
+        letter-spacing: .15rem;
+        z-index: 2;
+        margin-block: 0;
+        position: absolute;
+        top: 50%;
+        width: 100%;
+
+        @media (min-width: 768px){
+            font-size: 2.2rem;
+            left: 3rem;
+        }
+    }
+
+    &__subheading {
+        font-size: 5rem;
+        line-height: 1;
+        color: #f4f5f5;
+        margin-block: 0;
+
+        @media (min-width: 768px){
+            font-size: 10rem;
+        }
+
+        @media (min-width: 1200px){
+            font-size: 13rem;
+        }
+    }
+}

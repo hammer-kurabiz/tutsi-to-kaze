@@ -1,0 +1,35 @@
+{% comment %}
+    受け取るパラメータ:
+    - heading:    メインの見出しテキスト（任意）
+    - subheading: 背景の大きなテキスト（任意）
+    - text_alignment: 'left' or 'center'（任意）
+    - padding_top: 上の余白（px単位の数値）
+    - padding_bottom: 下の余白（px単位の数値）
+{% endcomment %}
+
+{%- liquid
+    assign text_alignment = text_alignment | default: 'center'
+
+    assign style_attribute = ''
+    if padding_top != blank
+        assign desktop_padding_top = padding_top | append: 'px'
+        assign mobile_padding_top = padding_top | times: 0.7 | round | append: 'px'
+        assign style_attribute = style_attribute | append: '--padding-top-mobile: ' | append: mobile_padding_top | append: '; --padding-top-desktop: ' | append: desktop_padding_top | append: ';'
+    endif
+    if padding_bottom != blank
+        assign desktop_padding_bottom = padding_bottom | append: 'px'
+        assign mobile_padding_bottom = padding_bottom | times: 0.7 | round | append: 'px'
+        assign style_attribute = style_attribute | append: '--padding-bottom-mobile: ' | append: mobile_padding_bottom | append: '; --padding-bottom-desktop: ' | append: desktop_padding_bottom | append: ';'
+    endif
+-%}
+
+{%- if heading != blank or subheading != blank -%}
+    <div class="section-title section-title--{{ text_alignment }}" style="{{ style_attribute }}">
+        {%- if heading != blank -%}
+        <h2 class="section-title__heading">{{ heading }}</h2>
+        {%- endif -%}
+        {%- if subheading != blank -%}
+        <p class="section-title__subheading cinzel">{{ subheading }}</p>
+        {%- endif -%}
+    </div>
+{%- endif -%}
