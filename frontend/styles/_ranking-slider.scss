@@ -1,0 +1,66 @@
+.ranking-slider-section {
+    overflow: hidden;
+}
+
+.ranking-slider {
+    padding: 5rem 0;
+    position: relative;
+
+    &__swiper{
+        overflow: unset !important;
+    }
+
+    &__title-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+
+        // section-titleコンポーネントのスタイルを上書き
+        .section-title {
+            margin-bottom: 0;
+            padding: 0;
+            text-align: left;
+        }
+    }
+
+    // Swiperの矢印をカードの高さ40%の位置に調整
+    .swiper-button-prev,
+    .swiper-button-next {
+        top: 40%;
+    }
+}
+
+// ランキング番号のバッジ
+.ranking-card {
+    // 親要素にこれを指定することで、中の要素の位置基準となる
+    &__image-wrapper {
+        position: relative;
+    }
+
+    &__rank {
+        position: absolute;
+        top: 0;
+        left: 1.5rem;
+        z-index: 3; // バッジより手前に
+        background-color: #c1a473;
+        color: #fff;
+        font-size: 1.6rem;
+        font-weight: bold;
+        line-height: 1;
+        padding: 2rem 1rem 0.5rem;
+
+        // リボン風の切り込み
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 10px 18px 0 18px;
+            border-color: #c1a473 transparent transparent transparent;
+        }
+    }
+}
