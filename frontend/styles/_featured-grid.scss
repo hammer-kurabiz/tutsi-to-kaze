@@ -1,5 +1,6 @@
 .featured-grid {
-    padding: 5rem 0;
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
 
     &__title-wrapper {
         text-align: center;
@@ -32,10 +33,10 @@
 
     &__grid {
         display: grid;
-        grid-template-columns: 1fr; // モバイルは1列
+        grid-template-columns: 1fr;
 
         @media (min-width: 750px) {
-            grid-template-columns: repeat(2, 1fr); // PCは2列
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 
@@ -54,26 +55,12 @@
         width: 100%;
         height: 100%;
 
-        // 画像の上に少し暗いオーバーレイをかける
-        &::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-color: rgba(0, 0, 0, 0.15);
-            z-index: 1;
-            transition: background-color 0.3s ease;
-        }
-
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.4s ease;
         }
-    }
-
-    &__item:hover &__image-wrapper::before {
-        background-color: rgba(0, 0, 0, 0.3);
     }
 
     &__item:hover img {
@@ -86,70 +73,123 @@
         padding: 2rem;
         color: #fff;
         display: flex;
-        flex-direction: column;
+        align-items: flex-end !important;
+        gap: 10px;
+        font-family: var(--font-heading-family);
 
-        // テキストの位置を調整するクラス
+        @media (min-width: 992px) {
+            padding: 3rem 4rem;
+        }
+
         &--top-left {
             top: 0;
             left: 0;
-            align-items: flex-start;
         }
         &--top-center {
             top: 0;
             left: 50%;
             transform: translateX(-50%);
-            align-items: center;
         }
         &--top-right {
             top: 0;
             right: 0;
-            align-items: flex-end;
         }
         &--center-left {
             top: 50%;
             left: 0;
             transform: translateY(-50%);
-            align-items: flex-start;
         }
         &--center-center {
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            align-items: center;
             text-align: center;
         }
         &--center-right {
             top: 50%;
             right: 0;
             transform: translateY(-50%);
-            align-items: flex-end;
         }
         &--bottom-left {
             bottom: 0;
             left: 0;
-            align-items: flex-start;
         }
         &--bottom-center {
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            align-items: center;
         }
         &--bottom-right {
             bottom: 0;
             right: 0;
-            align-items: flex-end;
         }
     }
 
+    &__content-txt {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
     &__pre-heading {
-        font-size: 1.3rem;
-        margin: 0 0 0.5rem;
+        font-size: 1.4rem;
+        margin: 0;
+        line-height: 1;
+
+        @media (min-width: 768px) {
+            font-size: 1.6rem;
+        }
+
+        @media (min-width: 992px) {
+            font-size: 1.8rem;
+        }
     }
 
     &__item-heading {
-        font-family: 'Shippori Mincho B1', serif;
-        font-size: 2.4rem;
+        font-size: 2.2rem;
         margin: 0;
+        color: #fff;
+        line-height: 1;
+        text-wrap: balance;
+
+        @media (min-width: 768px) {
+            font-size: 2.4rem;
+        }
+
+        @media (min-width: 992px) {
+            font-size: 2.6rem;
+        }
+
+        @media (min-width: 1200px) {
+            font-size: 3.2rem;
+        }
+    }
+
+    &__content-arrow {
+        position: relative;
+        display: block !important;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 35px;
+            aspect-ratio: 1;
+            background-color: transparent;
+            backdrop-filter: blur(10px);
+            border: solid 1px #fff;
+            border-radius: 50%;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 47%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            width: 5px;
+            height: 5px;
+            border-top: 1px solid #fff;
+            border-right: 1px solid #fff;
+        }
     }
 }

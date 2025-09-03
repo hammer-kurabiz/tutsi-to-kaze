@@ -69,7 +69,7 @@
             "pre_heading": "世界でたったひとつの花束",
             "heading": "フローリストおまかせスワッグ",
             "link": "",
-            "text_position": "top-left"
+            "text_position": "bottom-left"
           }
         },
         "featured_item_xiPXMJ": {
@@ -79,7 +79,7 @@
             "pre_heading": "空間を引き立てる",
             "heading": "大きな植物",
             "link": "",
-            "text_position": "top-right"
+            "text_position": "bottom-left"
           }
         },
         "featured_item_RfEfkN": {
@@ -99,7 +99,7 @@
             "pre_heading": "",
             "heading": "フラワーベース",
             "link": "",
-            "text_position": "bottom-right"
+            "text_position": "bottom-left"
           }
         }
       },
@@ -112,7 +112,12 @@
       "name": "【カスタム】特集グリッド",
       "settings": {
         "heading": "当店のイチオシ",
-        "subheading": "RECOMMEND"
+        "subheading": "RECOMMEND",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "title_text_alignment": "center",
+        "title_padding_top": 0,
+        "title_padding_bottom": 0
       }
     },
     "rich_text_Hpz4Gb": {
