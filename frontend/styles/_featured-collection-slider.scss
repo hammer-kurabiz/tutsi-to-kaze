@@ -3,18 +3,13 @@
 }
 
 .featured-collection {
-    padding: 6rem 0;
-    position: relative; // 矢印の位置の基準
-    padding-inline: 3rem;
-    max-width: 120rem;
+    position: relative;
+    padding-top: var(--padding-top-mobile);
+    padding-bottom: var(--padding-bottom-mobile);
 
-    @media (min-width: 768px){
-        width: 90%;
-        padding: 8rem 0;
-    }
-
-    @media (min-width: 992px){
-        padding: 12rem 0;
+    @media (min-width: 750px) {
+        padding-top: var(--padding-top-desktop);
+        padding-bottom: var(--padding-bottom-desktop);
     }
 
     &__title-wrapper {

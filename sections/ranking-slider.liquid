@@ -1,3 +1,12 @@
+{%- style -%}
+    #shopify-section-{{ section.id }} .ranking-slider {
+        --padding-top-desktop: {{ section.settings.padding_top_desktop }}px;
+        --padding-bottom-desktop: {{ section.settings.padding_bottom_desktop }}px;
+        --padding-top-mobile: {{ section.settings.padding_top_mobile }}px;
+        --padding-bottom-mobile: {{ section.settings.padding_bottom_mobile }}px;
+    }
+{%- endstyle -%}
+
 {{ 'swiper.css' | asset_url | stylesheet_tag }}
 
 <ranking-slider-section>
@@ -8,7 +17,9 @@
                 {%- render 'section-title',
                     heading: section.settings.heading,
                     subheading: section.settings.subheading,
-                    text_alignment: 'left'
+                    text_alignment: section.settings.title_text_alignment,
+                    padding_top: section.settings.title_padding_top,
+                    padding_bottom: section.settings.title_padding_bottom
                 -%}
                 {%- if section.settings.collection.url != blank and section.settings.button_label != blank -%}
                     <div class="ranking-slider__button-wrapper">
@@ -26,9 +37,7 @@
                     {%- if collection.products.size > 0 -%}
                         {%- for product in collection.products limit: product_limit -%}
                             <div class="swiper-slide">
-                                <div class="ranking-card">
-                                    {%- render 'card-product-custom', product_card: product, rank: forloop.index -%}
-                                </div>
+                                {%- render 'card-product-custom', product_card: product, rank: forloop.index -%}
                             </div>
                         {%- endfor -%}
                     {%- else -%}
@@ -69,11 +78,20 @@
             const swiper = new Swiper(this.swiperElement, {
                 loop: false,
                 slidesPerView: 1.5,
-                spaceBetween: 15,
-                navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+                spaceBetween: 7.5,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
                 breakpoints: {
-                    750: { slidesPerView: 3, spaceBetween: 20 },
-                    990: { slidesPerView: 4, spaceBetween: 30 },
+                    750: {
+                        slidesPerView: 3,
+                        spaceBetween: 20,
+                    },
+                    990: {
+                        slidesPerView: 3.5,
+                        spaceBetween: 30,
+                    },
                 },
             });
         }
@@ -86,11 +104,116 @@
     "name": "【カスタム】ランキング",
     "class": "shopify-section--ranking-slider",
     "settings": [
-        { "type": "text", "id": "heading", "label": "見出し", "default": "ランキング" },
-        { "type": "text", "id": "subheading", "label": "背景のテキスト", "default": "RANKING" },
-        { "type": "collection", "id": "collection", "label": "表示するコレクション" },
-        { "type": "range", "id": "products_to_show", "min": 4, "max": 12, "step": 1, "default": 8, "label": "表示する最大商品数" },
-        { "type": "text", "id": "button_label", "label": "ボタンのラベル", "default": "詳しく見る" }
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "見出し",
+            "default": "ランキング"
+        },
+        {
+            "type": "text",
+            "id": "subheading",
+            "label": "背景のテキスト",
+            "default": "RANKING"
+        },
+        {
+            "type": "header",
+            "content": "セクションの余白"
+        },
+        {
+            "type": "range",
+            "id": "padding_top_desktop",
+            "min": 0,
+            "max": 200,
+            "step": 10,
+            "unit": "px",
+            "label": "上の余白（PC）",
+            "default": 30
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom_desktop",
+            "min": 0,
+            "max": 200,
+            "step": 10,
+            "unit": "px",
+            "label": "下の余白（PC）",
+            "default": 30
+        },
+        {
+            "type": "range",
+            "id": "padding_top_mobile",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "unit": "px",
+            "label": "上の余白（スマホ）",
+            "default": 20
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom_mobile",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "unit": "px",
+            "label": "下の余白（スマホ）",
+            "default": 20
+        },
+        {
+            "type": "header",
+            "content": "タイトルの余白"
+        },
+        {
+            "type": "select",
+            "id": "title_text_alignment",
+            "label": "タイトルの配置",
+            "options": [
+                { "value": "center", "label": "中央揃え" },
+                { "value": "left", "label": "左揃え" }
+            ],
+            "default": "center"
+        },
+        {
+            "type": "range",
+            "id": "title_padding_top",
+            "min": 0,
+            "max": 200,
+            "step": 10,
+            "unit": "px",
+            "label": "上の余白（PC）",
+            "default": 30
+        },
+        {
+            "type": "range",
+            "id": "title_padding_bottom",
+            "min": 0,
+            "max": 200,
+            "step": 10,
+            "unit": "px",
+            "label": "下の余白（PC）",
+            "default": 30
+        },
+        {
+            "type": "collection",
+            "id": "collection",
+            "label": "表示するコレクション"
+        },
+        {
+            "type": "range",
+            "id": "products_to_show",
+            "min": 4,
+            "max": 12,
+            "step": 1,
+            "default": 8,
+            "label": "表示する最大商品数"
+        },
+        {
+            "type": "text",
+            "id": "button_label",
+            "label": "ボタンのラベル",
+            "default": "詳しく見る"
+        }
     ],
     "presets": [ { "name": "【カスタム】ランキング" } ]
 }

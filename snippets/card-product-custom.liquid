@@ -26,11 +26,15 @@
             {%- endif -%}
 
             <div class="card-product__badges">
-                {%- unless product_card.available -%}
-                    <span class="card-product__badge card-product__badge--sold-out">売り切れ</span>
-                {%- endunless -%}
-                {%- if product_card.compare_at_price > product_card.price and product_card.available -%}
-                    <span class="card-product__badge card-product__badge--sale">SALE</span>
+                {%- if rank -%}
+                    <div class="card-product__rank">{{ rank }}</div>
+                {%- else -%}
+                    {%- unless product_card.available -%}
+                        <span class="card-product__badge card-product__badge--sold-out">売り切れ</span>
+                    {%- endunless -%}
+                    {%- if product_card.compare_at_price > product_card.price and product_card.available -%}
+                        <span class="card-product__badge card-product__badge--sale">SALE</span>
+                    {%- endif -%}
                 {%- endif -%}
             </div>
         </div>

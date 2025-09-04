@@ -50,8 +50,12 @@
       "settings": {
         "heading": "空間を引き立てる大きな植物",
         "subheading": "BIG BOTANICAL",
+        "padding_top_desktop": 120,
+        "padding_bottom_desktop": 120,
+        "padding_top_mobile": 60,
+        "padding_bottom_mobile": 60,
         "title_text_alignment": "left",
-        "title_padding_top": 30,
+        "title_padding_top": 0,
         "title_padding_bottom": 30,
         "collection": "manabu",
         "products_to_show": 8,
@@ -118,6 +122,17 @@
         "title_text_alignment": "center",
         "title_padding_top": 0,
         "title_padding_bottom": 0
+      }
+    },
+    "ranking_slider_pkpPRL": {
+      "type": "ranking-slider",
+      "name": "【カスタム】ランキング",
+      "settings": {
+        "heading": "ランキング",
+        "subheading": "RANKING",
+        "collection": "manabu",
+        "products_to_show": 8,
+        "button_label": "詳しく見る"
       }
     },
     "rich_text_Hpz4Gb": {
@@ -1162,6 +1177,7 @@
     "166190620417471e2c",
     "featured_collection_slider_hTBApY",
     "featured_grid_7RcH7h",
+    "ranking_slider_pkpPRL",
     "rich_text_Hpz4Gb",
     "news_multicolumn_8EBcYG",
     "rich_text_XAYw9g",
