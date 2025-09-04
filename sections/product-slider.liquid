@@ -1,34 +1,36 @@
 {%- style -%}
-    #shopify-section-{{ section.id }} .ranking-slider {
+    #shopify-section-{{ section.id }} .product-slider {
         --padding-top-desktop: {{ section.settings.padding_top_desktop }}px;
         --padding-bottom-desktop: {{ section.settings.padding_bottom_desktop }}px;
         --padding-top-mobile: {{ section.settings.padding_top_mobile }}px;
         --padding-bottom-mobile: {{ section.settings.padding_bottom_mobile }}px;
+        subheading_color: section.settings.title_subheading_color
     }
 {%- endstyle -%}
 
 {{ 'swiper.css' | asset_url | stylesheet_tag }}
 
-<ranking-slider-section>
-    <div class="ranking-slider-section">
-        <div class="ranking-slider page-width">
+<product-slider-section>
+    <div class="product-slider-section" style="background-color: {{ section.settings.background_color }};">
+        <div class="product-slider page-width">
 
-            <div class="ranking-slider__title-wrapper">
+            <div class="product-slider__title-wrapper">
                 {%- render 'section-title',
                     heading: section.settings.heading,
                     subheading: section.settings.subheading,
                     text_alignment: section.settings.title_text_alignment,
                     padding_top: section.settings.title_padding_top,
-                    padding_bottom: section.settings.title_padding_bottom
+                    padding_bottom: section.settings.title_padding_bottom,
+                    subheading_color: section.settings.title_subheading_color
                 -%}
                 {%- if section.settings.collection.url != blank and section.settings.button_label != blank -%}
-                    <div class="ranking-slider__button-wrapper">
+                    <div class="product-slider__button-wrapper">
                         {%- render 'button-custom', label: section.settings.button_label, url: section.settings.collection.url -%}
                     </div>
                 {%- endif -%}
             </div>
 
-            <div class="swiper ranking-slider__swiper">
+            <div class="swiper product-slider__swiper">
                 <div class="swiper-wrapper">
                     {%- liquid
                         assign collection = section.settings.collection
@@ -37,14 +39,22 @@
                     {%- if collection.products.size > 0 -%}
                         {%- for product in collection.products limit: product_limit -%}
                             <div class="swiper-slide">
-                                {%- render 'card-product-custom', product_card: product, rank: forloop.index -%}
+                                {%- render 'card-product-custom',
+                                    product_card: product,
+                                    rank: forloop.index,
+                                    badge_type: section.settings.badge_display_type
+                                -%}
                             </div>
                         {%- endfor -%}
                     {%- else -%}
                         {%- for i in (1..product_limit) -%}
                             <div class="swiper-slide">
-                                <div class="ranking-card">
-                                    {%- render 'card-product-custom', index: i, rank: i -%}
+                                <div class="product-card">
+                                    {%- render 'card-product-custom',
+                                        index: i,
+                                        rank: i,
+                                        badge_type: section.settings.badge_display_type
+                                    -%}
                                 </div>
                             </div>
                         {%- endfor -%}
@@ -57,7 +67,7 @@
 
         </div>
     </div>
-</ranking-slider-section>
+</product-slider-section>
 
 <script src="{{ 'swiper.js' | asset_url }}" defer="defer"></script>
 
@@ -96,25 +106,41 @@
             });
         }
     }
-    customElements.define('ranking-slider-section', RankingSlider);
+    customElements.define('product-slider-section', RankingSlider);
 {%- endjavascript -%}
 
 {% schema %}
 {
-    "name": "【カスタム】ランキング",
+    "name": "【カスタム】商品スライダー",
     "class": "shopify-section--ranking-slider",
     "settings": [
+        {
+            "type": "color",
+            "id": "background_color",
+            "label": "背景色",
+            "default": "#FFFFFF"
+        },
         {
             "type": "text",
             "id": "heading",
             "label": "見出し",
-            "default": "ランキング"
+            "default": "特集商品"
         },
         {
             "type": "text",
             "id": "subheading",
             "label": "背景のテキスト",
-            "default": "RANKING"
+            "default": "Recommend"
+        },
+        {
+            "type": "select",
+            "id": "badge_display_type",
+            "label": "表示するバッジの種類",
+            "options": [
+                { "value": "ranking", "label": "ランキング番号" },
+                { "value": "sale_status", "label": "セール / 売り切れ" }
+            ],
+            "default": "ranking"
         },
         {
             "type": "header",
@@ -163,6 +189,12 @@
         {
             "type": "header",
             "content": "タイトルの余白"
+        },
+        {
+            "type": "color",
+            "id": "title_subheading_color",
+            "label": "背景テキストの色",
+            "default": "#f4f5f5"
         },
         {
             "type": "select",
@@ -215,6 +247,6 @@
             "default": "詳しく見る"
         }
     ],
-    "presets": [ { "name": "【カスタム】ランキング" } ]
+    "presets": [ { "name": "【カスタム】商品スライダー" } ]
 }
 {% endschema %}

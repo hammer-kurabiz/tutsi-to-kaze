@@ -26,7 +26,7 @@
             {%- endif -%}
 
             <div class="card-product__badges">
-                {%- if rank -%}
+                {%- if badge_type == 'ranking' and rank -%}
                     <div class="card-product__rank">{{ rank }}</div>
                 {%- else -%}
                     {%- unless product_card.available -%}
@@ -35,6 +35,7 @@
                     {%- if product_card.compare_at_price > product_card.price and product_card.available -%}
                         <span class="card-product__badge card-product__badge--sale">SALE</span>
                     {%- endif -%}
+
                 {%- endif -%}
             </div>
         </div>

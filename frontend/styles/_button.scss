@@ -13,6 +13,11 @@
     border-radius: 100vmax;
     text-decoration: none;
     transition: .3s cubic-bezier(0.4, 0, 1, 1);
+    @media (max-width:992px){
+        width: 200px;
+        padding: .8em 1.8em;
+        font-size: 1.4rem;
+    }
     &:hover{
         color: var(--gradient-base-accent-1);
         background-color: #f4f5f5;

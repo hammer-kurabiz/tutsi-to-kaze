@@ -1,8 +1,8 @@
-.ranking-slider-section {
+.product-slider-section {
     overflow: hidden;
 }
 
-.ranking-slider {
+.product-slider {
     position: relative;
     padding-top: var(--padding-top-mobile);
     padding-bottom: var(--padding-bottom-mobile);
@@ -21,8 +21,9 @@
         justify-content: space-between;
         align-items: center;
         margin-bottom: 2rem;
+        flex-wrap: wrap;
+        gap: 15px;
 
-        // section-titleコンポーネントのスタイルを上書き
         .section-title {
             margin-bottom: 0;
             padding: 0;
@@ -64,39 +65,5 @@
     }
     .swiper-button-next {
         right: 0;
-    }
-}
-
-// ランキング番号のバッジ
-.ranking-card {
-    // 親要素にこれを指定することで、中の要素の位置基準となる
-    &__image-wrapper {
-        position: relative;
-    }
-
-    &__rank {
-        position: absolute;
-        top: 0;
-        left: 1.5rem;
-        z-index: 3; // バッジより手前に
-        background-color: #c1a473;
-        color: #fff;
-        font-size: 1.6rem;
-        font-weight: bold;
-        line-height: 1;
-        padding: 2rem 1rem 0.5rem;
-
-        // リボン風の切り込み
-        &::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 10px 18px 0 18px;
-            border-color: #c1a473 transparent transparent transparent;
-        }
     }
 }

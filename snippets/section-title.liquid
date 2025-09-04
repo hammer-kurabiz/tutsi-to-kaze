@@ -26,10 +26,15 @@
 {%- if heading != blank or subheading != blank -%}
     <div class="section-title section-title--{{ text_alignment }}" style="{{ style_attribute }}">
         {%- if heading != blank -%}
-        <h2 class="section-title__heading">{{ heading }}</h2>
+            <h2 class="section-title__heading">{{ heading }}</h2>
         {%- endif -%}
         {%- if subheading != blank -%}
-        <p class="section-title__subheading cinzel">{{ subheading }}</p>
+            <p
+                class="section-title__subheading cinzel" 
+                style="color: {{ subheading_color }};"
+            >
+                {{ subheading }}
+            </p>
         {%- endif -%}
     </div>
 {%- endif -%}
