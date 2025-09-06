@@ -166,6 +166,120 @@
         "button_label": "詳しく見る"
       }
     },
+    "product_slider_Y8xMNi": {
+      "type": "product-slider",
+      "name": "【カスタム】商品スライダー",
+      "settings": {
+        "background_color": "#ffffff",
+        "heading": "ベストセラー",
+        "subheading": "BESTSELLER",
+        "badge_display_type": "sale_status",
+        "padding_top_desktop": 90,
+        "padding_bottom_desktop": 120,
+        "padding_top_mobile": 60,
+        "padding_bottom_mobile": 60,
+        "title_subheading_color": "#f4f5f5",
+        "title_text_alignment": "left",
+        "title_padding_top": 30,
+        "title_padding_bottom": 30,
+        "collection": "manabu",
+        "products_to_show": 8,
+        "button_label": "詳しく見る"
+      }
+    },
+    "featured_categories_Lirt8c": {
+      "type": "featured-categories",
+      "blocks": {
+        "category_3XjzjV": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/category-dryflower.png",
+            "title": "ドライフラワー",
+            "link": ""
+          }
+        },
+        "category_yXQHHD": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/category-bigbotanical.png",
+            "title": "BIG ボタニカル",
+            "link": ""
+          }
+        },
+        "category_PJQt6X": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/category-fleshflower.png",
+            "title": "フレッシュフラワー",
+            "link": ""
+          }
+        },
+        "category_qeWryf": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/category-flowerbase.png",
+            "title": "フラワーベース",
+            "link": ""
+          }
+        },
+        "category_CmhaMa": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/category-swag.png",
+            "title": "ドライフラワーのスワッグ",
+            "link": ""
+          }
+        },
+        "category_Xt8mUV": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/category-bouquet.png",
+            "title": "ドライフラワーのブーケ",
+            "link": ""
+          }
+        },
+        "category_G7edHU": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/category-wreathe.png",
+            "title": "ドライフラワーのリース",
+            "link": ""
+          }
+        },
+        "category_hXrN9F": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/category-subscription.png",
+            "title": "定期便",
+            "link": ""
+          }
+        },
+        "category_QLGt8L": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/category-accessory.png",
+            "title": "ドライフラワーのアクセサリー",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "category_3XjzjV",
+        "category_yXQHHD",
+        "category_PJQt6X",
+        "category_qeWryf",
+        "category_CmhaMa",
+        "category_Xt8mUV",
+        "category_G7edHU",
+        "category_hXrN9F",
+        "category_QLGt8L"
+      ],
+      "name": "【カスタム】特集カテゴリー",
+      "settings": {
+        "heading": "カテゴリー",
+        "subheading": "CATEGORY"
+      }
+    },
     "rich_text_Hpz4Gb": {
       "type": "rich-text",
       "blocks": {
@@ -1210,6 +1324,8 @@
     "featured_grid_7RcH7h",
     "product_slider_9w69Qi",
     "product_slider_TfFGtT",
+    "product_slider_Y8xMNi",
+    "featured_categories_Lirt8c",
     "rich_text_Hpz4Gb",
     "news_multicolumn_8EBcYG",
     "rich_text_XAYw9g",
