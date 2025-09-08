@@ -15,12 +15,9 @@
         grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
 
         @media (max-width: 749px) {
-        grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
         }
-    }
-
-    &__item {
-        // スタイルはリンク要素に直接適用
     }
 
     &__link {

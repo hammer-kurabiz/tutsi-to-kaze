@@ -276,8 +276,33 @@
       ],
       "name": "【カスタム】特集カテゴリー",
       "settings": {
+        "background_color": "#f4f5f5",
         "heading": "カテゴリー",
-        "subheading": "CATEGORY"
+        "subheading": "CATEGORY",
+        "padding_top": 90,
+        "padding_bottom": 120,
+        "title_subheading_color": "#ffffff",
+        "title_text_alignment": "center",
+        "title_padding_top": 30,
+        "title_padding_bottom": 30
+      }
+    },
+    "media_parallax_qEkEAg": {
+      "type": "media-parallax",
+      "name": "【カスタム】メディアパララックス",
+      "settings": {
+        "media_type": "image",
+        "image_mobile": "shopify://shop_images/tutsi-to-kaze-parallax-sp.jpg",
+        "image": "shopify://shop_images/tutsi-to-kaze-parallax.jpg",
+        "video_url": "",
+        "section_height": 80,
+        "section_height_mobile": 60,
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "heading": "",
+        "text": "",
+        "button_label": "",
+        "button_link": ""
       }
     },
     "rich_text_Hpz4Gb": {
@@ -1326,6 +1351,7 @@
     "product_slider_TfFGtT",
     "product_slider_Y8xMNi",
     "featured_categories_Lirt8c",
+    "media_parallax_qEkEAg",
     "rich_text_Hpz4Gb",
     "news_multicolumn_8EBcYG",
     "rich_text_XAYw9g",
