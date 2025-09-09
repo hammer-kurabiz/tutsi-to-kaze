@@ -325,6 +325,171 @@
         "button_label": "詳しく見る",
         "button_link": "shopify://collections/manabu"
       }
+    },
+    "custom_search_t8QhTW": {
+      "type": "custom-search",
+      "blocks": {
+        "scene_whmWeb": {
+          "type": "scene",
+          "settings": {
+            "title": "ウェディング",
+            "link": ""
+          }
+        },
+        "scene_WYC96K": {
+          "type": "scene",
+          "settings": {
+            "title": "お悔み・お供え",
+            "link": ""
+          }
+        },
+        "scene_74BBMJ": {
+          "type": "scene",
+          "settings": {
+            "title": "誕生日の祝い",
+            "link": ""
+          }
+        },
+        "scene_JqF67N": {
+          "type": "scene",
+          "settings": {
+            "title": "退職・卒業祝い　",
+            "link": ""
+          }
+        },
+        "scene_Jc9z9g": {
+          "type": "scene",
+          "settings": {
+            "title": "新築・引越し祝い",
+            "link": ""
+          }
+        },
+        "scene_mx8Jii": {
+          "type": "scene",
+          "settings": {
+            "title": "出産祝い",
+            "link": ""
+          }
+        },
+        "scene_NFFnMP": {
+          "type": "scene",
+          "settings": {
+            "title": "店舗装飾",
+            "link": ""
+          }
+        },
+        "scene_qt78ME": {
+          "type": "scene",
+          "settings": {
+            "title": "開店祝い",
+            "link": ""
+          }
+        },
+        "scene_Rd99TJ": {
+          "type": "scene",
+          "settings": {
+            "title": "お礼・お返し",
+            "link": ""
+          }
+        },
+        "color_47cd6D": {
+          "type": "color",
+          "settings": {
+            "color_value": "#fbfae6",
+            "title": "ホワイト",
+            "color_name": "ホワイト"
+          }
+        },
+        "color_r7D8xr": {
+          "type": "color",
+          "settings": {
+            "color_value": "#2e4730",
+            "title": "グリーン",
+            "color_name": "グリーン"
+          }
+        },
+        "color_zLxrEW": {
+          "type": "color",
+          "settings": {
+            "color_value": "#29498e",
+            "title": "ブルー",
+            "color_name": "ブルー"
+          }
+        },
+        "color_4B6GgR": {
+          "type": "color",
+          "settings": {
+            "color_value": "#ad2b79",
+            "title": "パープル",
+            "color_name": "パープル"
+          }
+        },
+        "color_EdT9TF": {
+          "type": "color",
+          "settings": {
+            "color_value": "#c73d34",
+            "title": "レッド",
+            "color_name": "レッド"
+          }
+        },
+        "color_86we8U": {
+          "type": "color",
+          "settings": {
+            "color_value": "#d46d2a",
+            "title": "オレンジ",
+            "color_name": "オレンジ"
+          }
+        },
+        "color_ytCjrQ": {
+          "type": "color",
+          "settings": {
+            "color_value": "#d2b13a",
+            "title": "イエロー",
+            "color_name": "イエロー"
+          }
+        },
+        "color_UfQ7nw": {
+          "type": "color",
+          "settings": {
+            "color_value": "#663d1d",
+            "title": "ブラウン",
+            "color_name": "ブラウン"
+          }
+        }
+      },
+      "block_order": [
+        "scene_whmWeb",
+        "scene_WYC96K",
+        "scene_74BBMJ",
+        "scene_JqF67N",
+        "scene_Jc9z9g",
+        "scene_mx8Jii",
+        "scene_NFFnMP",
+        "scene_qt78ME",
+        "scene_Rd99TJ",
+        "color_47cd6D",
+        "color_r7D8xr",
+        "color_zLxrEW",
+        "color_4B6GgR",
+        "color_EdT9TF",
+        "color_86we8U",
+        "color_ytCjrQ",
+        "color_UfQ7nw"
+      ],
+      "name": "【カスタム】商品検索",
+      "settings": {
+        "padding_top": 90,
+        "padding_bottom": 120,
+        "padding_top_mobile": 60,
+        "padding_bottom_mobile": 60,
+        "heading": "商品を探す",
+        "subheading": "SEARCH",
+        "title_subheading_color": "#ffffff",
+        "title_text_alignment": "center",
+        "title_padding_top": 30,
+        "title_padding_bottom": 30,
+        "background_color": "#f8f8f8"
+      }
     }
   },
   "order": [
@@ -336,6 +501,7 @@
     "product_slider_Y8xMNi",
     "featured_categories_Lirt8c",
     "media_parallax_qEkEAg",
-    "pickup_grid_emHJ4J"
+    "pickup_grid_emHJ4J",
+    "custom_search_t8QhTW"
   ]
 }

@@ -14,7 +14,8 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 2rem;
+        flex-wrap: wrap;
+        margin-bottom: 3rem;
     }
 
     &__grid {
