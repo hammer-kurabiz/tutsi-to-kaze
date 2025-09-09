@@ -1,0 +1,101 @@
+{%- style -%}
+    #shopify-section-{{ section.id }} {
+        --padding-top-desktop: {{ section.settings.padding_top_desktop }}px;
+        --padding-bottom-desktop: {{ section.settings.padding_bottom_desktop }}px;
+        --padding-top-mobile: {{ section.settings.padding_top_mobile }}px;
+        --padding-bottom-mobile: {{ section.settings.padding_bottom_mobile }}px;
+        --section-background-color: {{ section.settings.background_color }};
+    }
+{%- endstyle -%}
+
+<pickup-grid-section>
+    <div class="pickup-grid-section">
+        <div class="pickup-grid page-width">
+
+            <div class="pickup-grid__title-wrapper">
+                {%- render 'section-title',
+                    heading: section.settings.heading,
+                    subheading: section.settings.subheading,
+                    text_alignment: section.settings.title_text_alignment,
+                    padding_top: section.settings.title_padding_top,
+                    padding_bottom: section.settings.title_padding_bottom,
+                    subheading_color: section.settings.title_subheading_color
+                -%}
+                {%- if section.settings.button_link != blank -%}
+                    <div class="pickup-grid__button-wrapper">
+                        {%- render 'button-custom', label: section.settings.button_label, url: section.settings.button_link -%}
+                    </div>
+                {%- endif -%}
+            </div>
+
+            <div class="pickup-grid__grid">
+                {%- liquid
+                    assign collection = section.settings.collection
+                    assign product_limit = section.settings.products_to_show
+                -%}
+                {%- if collection.products.size > 0 -%}
+                    {%- for product in collection.products limit: product_limit -%}
+                        <div class="pickup-grid__item">
+                            {%- render 'card-product-custom', product_card: product -%}
+                        </div>
+                    {%- endfor -%}
+                {%- else -%}
+                    {%- for i in (1..product_limit) -%}
+                        <div class="pickup-grid__item">
+                            {%- render 'card-product-custom-placeholder', index: i -%}
+                        </div>
+                    {%- endfor -%}
+                {%- endif -%}
+            </div>
+
+        </div>
+    </div>
+</pickup-grid-section>
+
+{%- javascript -%}
+    // このセクションはスライダーではないため、特別なJavaScriptは不要です。
+    // 将来的な拡張性のためにカスタム要素の定義のみ残します。
+    class PickupGrid extends HTMLElement {
+        constructor() {
+            super();
+        }
+    }
+    customElements.define('pickup-grid-section', PickupGrid);
+{%- endjavascript -%}
+
+{% schema %}
+{
+    "name": "【カスタム】ピックアップ",
+    "class": "shopify-section--pickup-grid",
+    "settings": [
+        {
+            "type": "color",
+            "id": "background_color",
+            "label": "背景色",
+            "default": "#FFFFFF"
+        },
+        { "type": "text", "id": "heading", "label": "見出し", "default": "ピックアップ" },
+        { "type": "text", "id": "subheading", "label": "背景のテキスト", "default": "PICK UP" },
+        { "type": "header", "content": "セクションの余白" },
+        { "type": "range", "id": "padding_top_desktop", "min": 0, "max": 200, "step": 10, "unit": "px", "label": "上の余白（PC）", "default": 50 },
+        { "type": "range", "id": "padding_bottom_desktop", "min": 0, "max": 200, "step": 10, "unit": "px", "label": "下の余白（PC）", "default": 50 },
+        { "type": "range", "id": "padding_top_mobile", "min": 0, "max": 100, "step": 5, "unit": "px", "label": "上の余白（スマホ）", "default": 30 },
+        { "type": "range", "id": "padding_bottom_mobile", "min": 0, "max": 100, "step": 5, "unit": "px", "label": "下の余白（スマホ）", "default": 30 },
+        { "type": "header", "content": "タイトルの設定" },
+        { "type": "color", "id": "title_subheading_color", "label": "背景テキストの色", "default": "#f4f5f5" },
+        { "type": "select", "id": "title_text_alignment", "label": "タイトルの配置", "options": [ { "value": "center", "label": "中央揃え" }, { "value": "left", "label": "左揃え" } ], "default": "left" },
+        { "type": "range", "id": "title_padding_top", "min": 0, "max": 100, "step": 5, "unit": "px", "label": "タイトルの上の余白", "default": 30 },
+        { "type": "range", "id": "title_padding_bottom", "min": 0, "max": 100, "step": 5, "unit": "px", "label": "タイトルの下の余白", "default": 30 },
+        { "type": "header", "content": "コンテンツ設定" },
+        { "type": "collection", "id": "collection", "label": "表示するコレクション" },
+        { "type": "range", "id": "products_to_show", "min": 2, "max": 12, "step": 2, "default": 6, "label": "表示する最大商品数" },
+        { "type": "text", "id": "button_label", "label": "ボタンのラベル", "default": "詳しく見る" },
+        { "type": "url", "id": "button_link", "label": "ボタンのリンク先" }
+    ],
+    "presets": [
+        {
+            "name": "【カスタム】ピックアップ"
+        }
+    ]
+}
+{% endschema %}
