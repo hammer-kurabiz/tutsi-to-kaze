@@ -332,7 +332,7 @@
             "image": "shopify://shop_images/pickup-img.jpg",
             "heading": "SNSで人気",
             "text": "",
-            "url": ""
+            "url": "shopify://collections/manabu"
           }
         },
         "pickup_item_Urn8b6": {
@@ -341,7 +341,7 @@
             "image": "shopify://shop_images/pickup-img.jpg",
             "heading": "1点ものオートクチュール",
             "text": "",
-            "url": ""
+            "url": "shopify://collections/manabu"
           }
         },
         "pickup_item_3ffTTy": {
@@ -350,7 +350,7 @@
             "image": "shopify://shop_images/pickup-img.jpg",
             "heading": "お得なまとめ買い",
             "text": "",
-            "url": ""
+            "url": "shopify://collections/manabu"
           }
         },
         "pickup_item_GhDVwc": {
@@ -359,7 +359,7 @@
             "image": "shopify://shop_images/pickup-img.jpg",
             "heading": "送料無料商品",
             "text": "",
-            "url": ""
+            "url": "shopify://collections/manabu"
           }
         }
       },
@@ -570,6 +570,22 @@
         "show_tags": true,
         "button_label": "すべてのお知らせを見る"
       }
+    },
+    "about_hero_XjLGbN": {
+      "type": "about-hero",
+      "name": "【カスタム】アバウトヒーロー",
+      "settings": {
+        "background_image": "shopify://shop_images/about-bg.jpg",
+        "overlay_color": "#000000",
+        "overlay_opacity": 40,
+        "heading": "土と風の植物園について",
+        "body": "<p>土と風の植物園は、2018年、倉敷の小さなアトリエから始まりました。<br/>選りすぐりの生花を丁寧にドライフラワーへと仕立てています。<br/>暮らしになじむ彩りから、スワッグやリースなどのギフトまで。ときには、特別な瞬間に寄り添う装飾のお手伝いも。<br/>季節とともに移ろう植物のゆたかな表情をお届けしています。</p>",
+        "button_label": "詳しく見る",
+        "button_link": "shopify://collections/manabu",
+        "text_alignment": "center",
+        "padding_desktop": 180,
+        "padding_mobile": 60
+      }
     }
   },
   "order": [
@@ -583,6 +599,7 @@
     "media_parallax_qEkEAg",
     "pickup_grid_emHJ4J",
     "custom_search_t8QhTW",
-    "featured_news_zAjJXR"
+    "featured_news_zAjJXR",
+    "about_hero_XjLGbN"
   ]
 }

@@ -1,0 +1,122 @@
+{%- liquid
+    assign background_image = section.settings.background_image
+    assign overlay_color = section.settings.overlay_color
+    assign overlay_opacity = section.settings.overlay_opacity | divided_by: 100.0
+-%}
+
+{%- style -%}
+    #shopify-section-{{ section.id }} {
+        --about-hero-padding-desktop: {{ section.settings.padding_desktop }}px;
+        --about-hero-padding-mobile: {{ section.settings.padding_mobile }}px;
+    }
+{%- endstyle -%}
+
+<section class="about-hero">
+    <div class="about-hero__background"{% if background_image %} style="background-image: url({{ background_image | image_url: width: 2400 }});"{% endif %}>
+        <div class="about-hero__overlay" aria-hidden="true" style="background-color: {{ overlay_color }}; opacity: {{ overlay_opacity }};"></div>
+    </div>
+    <div class="about-hero__inner page-width">
+        <div class="about-hero__content about-hero__content--{{ section.settings.text_alignment }}">
+            {%- if section.settings.heading != blank -%}
+                <h2 class="about-hero__heading">{{ section.settings.heading }}</h2>
+            {%- endif -%}
+
+            {%- if section.settings.body != blank -%}
+                <div class="about-hero__body">{{ section.settings.body }}</div>
+            {%- endif -%}
+
+            {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
+                <div class="about-hero__cta">
+                    {%- render 'button-custom', label: section.settings.button_label, url: section.settings.button_link -%}
+                </div>
+            {%- endif -%}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "【カスタム】アバウトヒーロー",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "background_image",
+            "label": "背景画像"
+        },
+        {
+            "type": "color",
+            "id": "overlay_color",
+            "label": "オーバーレイカラー",
+            "default": "#000000"
+        },
+        {
+            "type": "range",
+            "id": "overlay_opacity",
+            "label": "オーバーレイの不透明度",
+            "min": 0,
+            "max": 90,
+            "step": 5,
+            "unit": "%",
+            "default": 40
+        },
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "見出し",
+            "default": "土と風の植物園について"
+        },
+        {
+            "type": "richtext",
+            "id": "body",
+            "label": "本文",
+            "default": "<p>土と風の植物園は、2018年、倉敷の小さなアトリエから始まりました。選りすぐりの生花を丁寧にドライフラワーへと仕立てています。</p><p>暮らしになじむ彩りから、スワッグやリースなどのギフトまで。ときには、特別な瞬間に寄り添う装飾のお手伝いも。季節とともに移ろう植物のゆたかな表情をお届けしています。</p>"
+        },
+        {
+            "type": "text",
+            "id": "button_label",
+            "label": "ボタンのラベル",
+            "default": "詳しく見る"
+        },
+        {
+            "type": "url",
+            "id": "button_link",
+            "label": "ボタンのリンク先"
+        },
+        {
+            "type": "select",
+            "id": "text_alignment",
+            "label": "テキストの配置",
+            "default": "center",
+            "options": [
+                { "value": "left", "label": "左揃え" },
+                { "value": "center", "label": "中央揃え" }
+            ]
+        },
+        {
+            "type": "range",
+            "id": "padding_desktop",
+            "label": "上下余白（PC）",
+            "min": 40,
+            "max": 200,
+            "step": 10,
+            "unit": "px",
+            "default": 120
+        },
+        {
+            "type": "range",
+            "id": "padding_mobile",
+            "label": "上下余白（スマホ）",
+            "min": 20,
+            "max": 140,
+            "step": 10,
+            "unit": "px",
+            "default": 80
+        }
+    ],
+    "presets": [
+        {
+            "name": "【カスタム】アバウトヒーロー"
+        }
+    ]
+}
+{% endschema %}
