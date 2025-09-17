@@ -29,20 +29,44 @@
             </div>
 
             <div class="pickup-grid__grid">
-                {%- liquid
-                    assign collection = section.settings.collection
-                    assign product_limit = section.settings.products_to_show
-                -%}
-                {%- if collection.products.size > 0 -%}
-                    {%- for product in collection.products limit: product_limit -%}
-                        <div class="pickup-grid__item">
-                            {%- render 'card-product-custom', product_card: product -%}
+                {%- if section.blocks.size > 0 -%}
+                    {%- for block in section.blocks -%}
+                        {%- assign item_url = block.settings.url -%}
+                        <div class="pickup-grid__item" {{ block.shopify_attributes }}>
+                            {%- if item_url != blank -%}
+                                <a class="pickup-grid__item-link" href="{{ item_url }}">
+                            {%- endif -%}
+
+                            {%- if block.settings.image != blank -%}
+                                <div class="pickup-grid__item-image">
+                                    {{ block.settings.image | image_url: width: 900 | image_tag: loading: 'lazy' }}
+                                </div>
+                            {%- endif -%}
+
+                            {%- if block.settings.heading != blank -%}
+                                <h3 class="pickup-grid__item-heading">{{ block.settings.heading }}</h3>
+                            {%- endif -%}
+
+                            {%- if block.settings.text != blank -%}
+                                <div class="pickup-grid__item-text">{{ block.settings.text }}</div>
+                            {%- endif -%}
+
+                            {%- if item_url != blank -%}
+                                </a>
+                            {%- endif -%}
                         </div>
                     {%- endfor -%}
                 {%- else -%}
-                    {%- for i in (1..product_limit) -%}
+                    {% comment %}
+                        デフォルトのプレースホルダー。テーマエディタでブロックを追加してください。
+                    {% endcomment %}
+                    {%- for i in (1..4) -%}
                         <div class="pickup-grid__item">
-                            {%- render 'card-product-custom', index: i -%}
+                            <div class="pickup-grid__item-placeholder">
+                                <div class="pickup-grid__item-image placeholder"></div>
+                                <h3 class="pickup-grid__item-heading">サンプルタイトル {{ i }}</h3>
+                                <div class="pickup-grid__item-text">ここにテキストが表示されます。</div>
+                            </div>
                         </div>
                     {%- endfor -%}
                 {%- endif -%}
@@ -181,20 +205,6 @@
             "content": "コンテンツ設定"
         },
         {
-            "type": "collection",
-            "id": "collection",
-            "label": "表示するコレクション"
-        },
-        {
-            "type": "range",
-            "id": "products_to_show",
-            "min": 2,
-            "max": 12,
-            "step": 2,
-            "default": 6,
-            "label": "表示する最大商品数"
-        },
-        {
             "type": "text",
             "id": "button_label",
             "label": "ボタンのラベル",
@@ -204,6 +214,37 @@
             "type": "url",
             "id": "button_link",
             "label": "ボタンのリンク先"
+        }
+    ],
+    "max_blocks": 12,
+    "blocks": [
+        {
+            "type": "pickup_item",
+            "name": "ピックアップアイテム",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "画像"
+                },
+                {
+                    "type": "text",
+                    "id": "heading",
+                    "label": "タイトル",
+                    "default": "サンプルタイトル"
+                },
+                {
+                    "type": "richtext",
+                    "id": "text",
+                    "label": "テキスト",
+                    "default": "<p>ここに説明文が入ります。</p>"
+                },
+                {
+                    "type": "url",
+                    "id": "url",
+                    "label": "リンク先"
+                }
+            ]
         }
     ],
     "presets": [

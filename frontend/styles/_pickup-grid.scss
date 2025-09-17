@@ -27,4 +27,27 @@
         grid-template-columns: repeat(4, 1fr); // PCは4列
         }
     }
+
+    &__item-link{
+        text-decoration: none;
+
+        &:hover{
+            .pickup-grid__item-image{
+                img{
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+
+    &__item-image {
+        overflow: hidden;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: .3s ease;
+        }
+    }
 }

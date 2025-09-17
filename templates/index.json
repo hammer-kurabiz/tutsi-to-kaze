@@ -307,6 +307,70 @@
     },
     "pickup_grid_emHJ4J": {
       "type": "pickup-grid",
+      "blocks": {
+        "pickup_item_KfB8Cx": {
+          "type": "pickup_item",
+          "settings": {
+            "image": "shopify://shop_images/pickup-img.jpg",
+            "heading": "一輪挿しで愛しさ増すドライフラワー",
+            "text": "",
+            "url": "shopify://collections/manabu"
+          }
+        },
+        "pickup_item_WRMy8r": {
+          "type": "pickup_item",
+          "settings": {
+            "image": "shopify://shop_images/pickup-img.jpg",
+            "heading": "飾るだけでサマになるドライフラワーのセット",
+            "text": "",
+            "url": "shopify://collections/manabu"
+          }
+        },
+        "pickup_item_GwRNUc": {
+          "type": "pickup_item",
+          "settings": {
+            "image": "shopify://shop_images/pickup-img.jpg",
+            "heading": "SNSで人気",
+            "text": "",
+            "url": ""
+          }
+        },
+        "pickup_item_Urn8b6": {
+          "type": "pickup_item",
+          "settings": {
+            "image": "shopify://shop_images/pickup-img.jpg",
+            "heading": "1点ものオートクチュール",
+            "text": "",
+            "url": ""
+          }
+        },
+        "pickup_item_3ffTTy": {
+          "type": "pickup_item",
+          "settings": {
+            "image": "shopify://shop_images/pickup-img.jpg",
+            "heading": "お得なまとめ買い",
+            "text": "",
+            "url": ""
+          }
+        },
+        "pickup_item_GhDVwc": {
+          "type": "pickup_item",
+          "settings": {
+            "image": "shopify://shop_images/pickup-img.jpg",
+            "heading": "送料無料商品",
+            "text": "",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "pickup_item_KfB8Cx",
+        "pickup_item_WRMy8r",
+        "pickup_item_GwRNUc",
+        "pickup_item_Urn8b6",
+        "pickup_item_3ffTTy",
+        "pickup_item_GhDVwc"
+      ],
       "name": "【カスタム】ピックアップ",
       "settings": {
         "background_color": "#ffffff",
@@ -320,8 +384,6 @@
         "title_text_alignment": "left",
         "title_padding_top": 30,
         "title_padding_bottom": 30,
-        "collection": "manabu",
-        "products_to_show": 6,
         "button_label": "詳しく見る",
         "button_link": "shopify://collections/manabu"
       }
@@ -490,6 +552,24 @@
         "title_padding_bottom": 30,
         "background_color": "#f8f8f8"
       }
+    },
+    "featured_news_zAjJXR": {
+      "type": "featured-news",
+      "name": "【カスタム】お知らせ",
+      "settings": {
+        "padding_top_desktop": 120,
+        "padding_bottom_desktop": 120,
+        "padding_top_mobile": 60,
+        "padding_bottom_mobile": 60,
+        "title_padding_top": 0,
+        "title_padding_bottom": 0,
+        "heading": "お知らせ",
+        "subheading": "NEWS",
+        "blog": "",
+        "post_limit": 3,
+        "show_tags": true,
+        "button_label": "すべてのお知らせを見る"
+      }
     }
   },
   "order": [
@@ -502,6 +582,7 @@
     "featured_categories_Lirt8c",
     "media_parallax_qEkEAg",
     "pickup_grid_emHJ4J",
-    "custom_search_t8QhTW"
+    "custom_search_t8QhTW",
+    "featured_news_zAjJXR"
   ]
 }
