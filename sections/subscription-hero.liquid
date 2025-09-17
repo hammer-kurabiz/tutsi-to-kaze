@@ -1,0 +1,180 @@
+
+{%- style -%}
+    #shopify-section-{{ section.id }} {
+        --section-padding-top-desktop: {{ section.settings.padding_top_desktop }}px;
+        --section-padding-bottom-desktop: {{ section.settings.padding_bottom_desktop }}px;
+        --section-padding-top-mobile: {{ section.settings.padding_top_mobile }}px;
+        --section-padding-bottom-mobile: {{ section.settings.padding_bottom_mobile }}px;
+        --section-background-color: {{ section.settings.background_color }};
+    }
+{%- endstyle -%}
+
+<section class="subscription-hero">
+    <div class="subscription-hero__inner">
+        {%- render 'section-title',
+            heading: section.settings.heading,
+            subheading: section.settings.subheading,
+            padding_top: section.settings.title_padding_top,
+            padding_bottom: section.settings.title_padding_bottom
+        -%}
+
+        <div class="subscription-hero__content">
+            <div class="subscription-hero__main">
+                {%- if section.settings.subtitle != blank -%}
+                    <p class="subscription-hero__subtitle">{{ section.settings.subtitle }}</p>
+                {%- endif -%}
+
+                {%- if section.settings.body != blank -%}
+                    <div class="subscription-hero__body">{{ section.settings.body }}</div>
+                {%- endif -%}
+
+                <div class="subscription-hero__buttons">
+                    {%- if section.settings.primary_label != blank and section.settings.primary_link != blank -%}
+                        {%- render 'button-custom', label: section.settings.primary_label, url: section.settings.primary_link -%}
+                    {%- endif -%}
+
+                    {%- if section.settings.secondary_label != blank and section.settings.secondary_link != blank -%}
+                        {%- render 'button-custom', label: section.settings.secondary_label, url: section.settings.secondary_link, class: 'button-custom--outline' -%}
+                    {%- endif -%}
+                </div>
+            </div>
+
+            {%- if section.settings.image != blank -%}
+                <div class="subscription-hero__visual">
+                    {{ section.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy' }}
+                </div>
+            {%- endif -%}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "【カスタム】サブスクリプションヒーロー",
+    "class": "section-subscription-hero",
+    "settings": [
+        {
+            "type": "color",
+            "id": "background_color",
+            "label": "背景色",
+            "default": "#f3f5f3"
+        },
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "見出し",
+            "default": "ドライフラワー定期便"
+        },
+        {
+            "type": "text",
+            "id": "subheading",
+            "label": "サブ見出し",
+            "default": "SUBSCRIPTION"
+        },
+        {
+            "type": "range",
+            "id": "title_padding_top",
+            "label": "タイトルの上余白",
+            "min": 0,
+            "max": 120,
+            "step": 5,
+            "unit": "px",
+            "default": 20
+        },
+        {
+            "type": "range",
+            "id": "title_padding_bottom",
+            "label": "タイトルの下余白",
+            "min": 0,
+            "max": 120,
+            "step": 5,
+            "unit": "px",
+            "default": 20
+        },
+        {
+            "type": "text",
+            "id": "subtitle",
+            "label": "サブタイトル",
+            "default": "毎月届く、小さな季節の贈りもの"
+        },
+        {
+            "type": "richtext",
+            "id": "body",
+            "label": "本文",
+            "default": "<p>定期便の説明テキストが入ります。定期便の説明テキストが入ります。定期便の説明テキストが入ります。定期便の説明テキストが入ります。定期便の説明テキストが入ります。</p>"
+        },
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "右側の画像"
+        },
+        {
+            "type": "text",
+            "id": "primary_label",
+            "label": "ボタン1のラベル",
+            "default": "マイページ"
+        },
+        {
+            "type": "url",
+            "id": "primary_link",
+            "label": "ボタン1のリンク"
+        },
+        {
+            "type": "text",
+            "id": "secondary_label",
+            "label": "ボタン2のラベル",
+            "default": "過去のお届け品"
+        },
+        {
+            "type": "url",
+            "id": "secondary_link",
+            "label": "ボタン2のリンク"
+        },
+        {
+            "type": "range",
+            "id": "padding_top_desktop",
+            "label": "上の余白（PC）",
+            "min": 0,
+            "max": 240,
+            "step": 10,
+            "unit": "px",
+            "default": 120
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom_desktop",
+            "label": "下の余白（PC）",
+            "min": 0,
+            "max": 240,
+            "step": 10,
+            "unit": "px",
+            "default": 120
+        },
+        {
+            "type": "range",
+            "id": "padding_top_mobile",
+            "label": "上の余白（スマホ）",
+            "min": 0,
+            "max": 200,
+            "step": 10,
+            "unit": "px",
+            "default": 80
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom_mobile",
+            "label": "下の余白（スマホ）",
+            "min": 0,
+            "max": 200,
+            "step": 10,
+            "unit": "px",
+            "default": 80
+        }
+    ],
+    "presets": [
+        {
+            "name": "【カスタム】サブスクリプションヒーロー"
+        }
+    ]
+}
+{% endschema %}
