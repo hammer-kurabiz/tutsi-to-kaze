@@ -618,6 +618,27 @@
         "padding_top_mobile": 80,
         "padding_bottom_mobile": 0
       }
+    },
+    "column_grid_dfemt3": {
+      "type": "column-grid",
+      "name": "【カスタム】コラムグリッド",
+      "settings": {
+        "background_color": "#ffffff",
+        "heading": "読みもの",
+        "subheading": "COLUMN",
+        "title_subheading_color": "#f4f5f5",
+        "title_text_alignment": "left",
+        "title_padding_top": 0,
+        "title_padding_bottom": 0,
+        "blog": "popup",
+        "articles_to_show": 4,
+        "button_label": "詳しく見る",
+        "button_link": "shopify://collections/manabu",
+        "padding_top_desktop": 120,
+        "padding_bottom_desktop": 120,
+        "padding_top_mobile": 80,
+        "padding_bottom_mobile": 80
+      }
     }
   },
   "order": [
@@ -634,6 +655,7 @@
     "featured_news_zAjJXR",
     "about_hero_XjLGbN",
     "custom_liquid_hfxXep",
-    "subscription_hero_344y4T"
+    "subscription_hero_344y4T",
+    "column_grid_dfemt3"
   ]
 }

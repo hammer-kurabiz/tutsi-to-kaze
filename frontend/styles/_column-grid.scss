@@ -1,0 +1,91 @@
+.column-grid {
+    background-color: var(--column-grid-background-color);
+    padding: var(--column-grid-padding-top-mobile) 0 var(--column-grid-padding-bottom-mobile);
+
+    @media (min-width: 750px) {
+        padding: var(--column-grid-padding-top-desktop) 0 var(--column-grid-padding-bottom-desktop);
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    &__title-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+
+    &__items {
+        display: grid;
+        gap: 3rem;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+
+    &__item {
+        background-color: #f6f6f6;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+        }
+    }
+
+    &__link {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        color: inherit;
+        text-decoration: none;
+    }
+
+    &__image {
+        position: relative;
+        background-color: #f2f2f2;
+
+        img {
+            width: 100%;
+            height: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            display: block;
+        }
+
+    }
+
+    &__content {
+        padding: 2.4rem;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        gap: 1.2rem;
+        height: 100%;
+    }
+
+    &__title {
+        font-size: 1.6rem;
+        font-weight: 600;
+        line-height: 1.6;
+        margin: 0;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 3;
+        /* 非対応ブラウザ向けのフォールバック */
+        max-height: calc(1.5em * 3);
+    }
+
+    &__date {
+        font-size: 1.2rem;
+        color: #5a5c5e;
+    }
+}
