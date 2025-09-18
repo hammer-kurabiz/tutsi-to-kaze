@@ -64,6 +64,10 @@
         padding-right: 3.5rem;
         margin-right: 3rem;
 
+        @media (max-width: 989px) {
+            display: none;
+        }
+
         &::after{
             content: "";
             position: absolute;
@@ -113,8 +117,9 @@
             height: 0.8rem;
             border-right: 1px solid currentColor;
             border-bottom: 1px solid currentColor;
-            transform: rotate(45deg);
+            transform: translateY(-50%) rotate(45deg);
             margin-left: 0.4rem;
+            transition: .3s ease;
         }
     }
 
@@ -148,12 +153,11 @@
         left: 50%;
         transform: translateX(-50%);
         background: #fff;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-        border-radius: 8px;
-        min-width: 18rem;
+        min-width: 20rem;
         display: grid;
         gap: 0.8rem;
         z-index: 10;
+        border-radius: 5px;
     }
 
     &__submenu-link {
@@ -161,6 +165,18 @@
         font-size: 1.3rem;
         text-decoration: none;
         letter-spacing: 0.05em;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 0 1rem 1rem;
+
+        /* &::before{
+            content: '';
+            width: 5px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background-color: inherit;
+        } */
 
         &:hover,
         &:focus {
@@ -188,6 +204,12 @@
         &:focus {
             color: rgba(0, 0, 0, 0.6);
         }
+
+        &.account {
+            @media (max-width: 750px){
+                display: none;
+            }
+        }
     }
 
     &__icon {
@@ -213,4 +235,135 @@
             justify-content: space-between;
         }
     }
+
+    &__mobile-toggle {
+        display: none; // PCでは非表示
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        width: 24px;
+        aspect-ratio: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 101; // ドロワーより手前に
+
+        .icon-hamburger { display: block; }
+        .icon-close { display: none; }
+
+        &[aria-expanded="true"] .icon-hamburger { display: none; }
+        &[aria-expanded="true"] .icon-close { display: block; }
+
+        @media (min-width: 990px) {
+            display: none; // PCで非表示
+        }
+    }
+
+    // --- ドロワーメニュー ---
+    &__menu-drawer-details {
+        display: none;
+        @media (max-width: 989px) {
+            display: block; // モバイルで表示
+        }
+    }
+
+    &__menu-drawer {
+        position: fixed;
+        top: 120px;
+        left: 0;
+        width: 100%;
+        height: auto;
+        background-color: #fff;
+        z-index: 100;
+        opacity: 0;
+        transition: .3s ease;
+        padding: 4rem 3rem;
+        border-top: solid 1px #f0f0f0;
+
+        details[open] > & {
+            opacity: 1;
+        }
+    }
+
+    &__drawer-menu {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__drawer-menu-link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 1.5rem 0;
+        font-size: 1.6rem;
+        text-decoration: none;
+        color: var(--header-text-color);
+        border-bottom: 1px solid #f0f0f0;
+
+        .icon-caret {
+            transition: transform 0.2s ease;
+            height: .8rem;
+        }
+    }
+
+    &__drawer-details {
+        // アコーディオンが開いた時に、アイコンを回転させる
+        &[open] > summary .icon-caret {
+            transform: rotate(180deg);
+        }
+
+        summary {
+            list-style: none; // summaryのデフォルトのマーカーを消す
+            &::-webkit-details-marker {
+                display: none;
+            }
+        }
+    }
+
+    &__drawer-submenu {
+        list-style: none;
+        padding-left: 1.5rem; // サブメニューを少しインデント
+        margin-top: 1rem;
+    }
+
+    &__drawer-submenu-link {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 0;
+        font-size: 1.4rem;
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.7);
+        position: relative;
+
+        &::before{
+            content: '';
+            width: 8px;
+            height: 1px;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+    }
+}
+
+// --- 989px以下の画面（モバイル） ---
+@media (max-width: 989px) {
+    .header-custom__nav {
+        display: none; // PC用ナビゲーションを非表示
+    }
+}
+
+// --- 990px以上の画面（PC） ---
+@media (min-width: 990px) {
+    .header-custom__mobile-toggle {
+        display: none; // ハンバーガーメニューを非表示
+    }
+}
+
+// --- JSでbodyに付与するクラス ---
+body.overflow-hidden {
+    overflow: hidden;
 }

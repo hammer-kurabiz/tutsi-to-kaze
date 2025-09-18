@@ -69,7 +69,7 @@
 
                 <div class="header-custom__actions">
                     {%- if section.settings.show_search -%}
-                        <a class="header-custom__icon-link" href="{{ routes.search_url }}">
+                        <a class="header-custom__icon-link search" href="{{ routes.search_url }}">
                             <svg class="header-custom__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.08 17.98">
                                 <circle class="cls-1" cx="6.79" cy="7.12" r="6.2"/>
                                 <line class="cls-1" x1="16.63" y1="17.2" x2="11.04" y2="11.62"/>
@@ -78,7 +78,7 @@
                     {%- endif -%}
 
                     {%- if section.settings.show_account and shop.customer_accounts_enabled -%}
-                        <a class="header-custom__icon-link" href="{{ routes.account_url }}">
+                        <a class="header-custom__icon-link account" href="{{ routes.account_url }}">
                             <svg class="header-custom__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.08 17.98">
                                 <circle class="cls-1" cx="8.54" cy="4.08" r="3.58"/>
                                 <path class="cls-1" d="M16.58,17.48H.5v-1.8c0-3.05,2.47-5.52,5.52-5.52h5.04c3.05,0,5.52,2.47,5.52,5.52v1.8Z"/>
@@ -87,18 +87,87 @@
                     {%- endif -%}
 
                     {%- if section.settings.show_cart -%}
-                        <a class="header-custom__icon-link" href="{{ routes.cart_url }}">
+                        <a class="header-custom__icon-link cart" href="{{ routes.cart_url }}">
                             <svg class="header-custom__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.08 17.98">
                                 <path class="cls-1" d="M12.15,17.17h-7.23c-2.44,0-4.43-1.98-4.43-4.43L.91.81h14.96l.7,11.93c0,2.44-1.98,4.43-4.43,4.43Z"/>
                                 <path class="cls-1" d="M12.63,1.22c0,2.74-1.91,4.97-4.27,4.97S4.09,3.96,4.09,1.22"/>
                             </svg>
                         </a>
                     {%- endif -%}
+
+                    <custom-header-drawer>
+                        <details class="header-custom__menu-drawer-details">
+                            <summary class="header-custom__mobile-toggle" aria-label="メニューを開く">
+                                {% render 'icon-hamburger' %}
+                                {% render 'icon-close' %}
+                            </summary>
+                            <div class="header-custom__menu-drawer">
+                                <nav class="header-custom__drawer-nav">
+                                    <ul class="header-custom__drawer-menu">
+                                        {%- for link in menu.links -%}
+                                        <li class="header-custom__drawer-menu-item">
+                                            {%- if link.links.size > 0 -%}
+                                                <details class="header-custom__drawer-details">
+                                                    <summary class="header-custom__drawer-menu-link">
+                                                    <span>{{ link.title }}</span>
+                                                    {% render 'icon-caret' %}
+                                                    </summary>
+                                                    <ul class="header-custom__drawer-submenu">
+                                                    {%- for child_link in link.links -%}
+                                                        <li>
+                                                        <a href="{{ child_link.url }}" class="header-custom__drawer-submenu-link">
+                                                            {{ child_link.title }}
+                                                        </a>
+                                                        </li>
+                                                    {%- endfor -%}
+                                                    </ul>
+                                                </details>
+                                            {%- else -%}
+                                                <a href="{{ link.url }}" class="header-custom__drawer-menu-link">
+                                                    {{ link.title }}
+                                                </a>
+                                            {%- endif -%}
+                                        </li>
+                                        {%- endfor -%}
+                                    </ul>
+                                </nav>
+                            </div>
+                        </details>
+                    </custom-header-drawer>
                 </div>
             </div>
         </div>
     </div>
 </header>
+
+{%- javascript -%}
+    class CustomHeaderDrawer extends HTMLElement {
+        constructor() {
+        super();
+        this.menuToggle = this.querySelector('summary');
+        this.mainContent = document.getElementById('MainContent');
+
+        this.menuToggle.addEventListener('click', this.onToggleClick.bind(this));
+        }
+
+        onToggleClick(event) {
+        event.preventDefault();
+        const isOpening = !this.menuToggle.parentElement.hasAttribute('open');
+
+        this.menuToggle.setAttribute('aria-expanded', isOpening);
+
+        document.body.classList.toggle('overflow-hidden', isOpening);
+        this.menuToggle.parentElement.toggleAttribute('open', isOpening);
+
+        if (isOpening) {
+            this.mainContent.inert = true;
+        } else {
+            this.mainContent.inert = false;
+        }
+        }
+    }
+    customElements.define('custom-header-drawer', CustomHeaderDrawer);
+{%- endjavascript -%}
 
 {% schema %}
 {
