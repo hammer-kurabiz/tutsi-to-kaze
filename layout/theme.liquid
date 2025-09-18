@@ -246,8 +246,8 @@
       {{ "accessibility.skip_to_text" | t }}
     </a>
 
-    {% section 'announcement-bar' %}
-    {% section 'header' %}
+    {% comment %} {% section 'announcement-bar' %} {% endcomment %}
+    {% section 'header-custom' %}
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
@@ -356,10 +356,10 @@
       <script src="{{ 'swiper.js' | asset_url }}"></script>
     {%- endif -%}
     <script src="{{ 'script.js' | asset_url }}"></script>
-  <div id="pagetop" class="pagetop">
+  {% comment %} <div id="pagetop" class="pagetop">
       <a class="link" href="#">
         <img src="https://cdn.shopify.com/s/files/1/0440/0637/5579/files/pagetop.png?v=1655186724" class="ofi -contain">
       </a>
-  </div>
+  </div> {% endcomment %}
   </body>
 </html>

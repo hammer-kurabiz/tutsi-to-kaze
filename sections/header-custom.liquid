@@ -1,0 +1,211 @@
+{%- style -%}
+    #shopify-section-{{ section.id }} {
+        --header-top-background: {{ section.settings.announcement_background }};
+        --header-top-color: {{ section.settings.announcement_color }};
+        --header-highlight-color: {{ section.settings.announcement_highlight_color }};
+        --header-background: {{ section.settings.header_background }};
+        --header-text-color: {{ section.settings.header_text_color }};
+        --header-divider-color: {{ section.settings.header_divider_color }};
+        --header-padding-desktop: {{ section.settings.padding_desktop }}px;
+        --header-padding-mobile: {{ section.settings.padding_mobile }}px;
+    }
+{%- endstyle -%}
+
+{%- assign menu = section.settings.menu -%}
+
+<header class="header-custom">
+    {%- if section.settings.show_announcement and section.settings.announcement_text != blank -%}
+        <div class="header-custom__announcement">
+            <div class="header-custom__announcement-inner page-width">
+                {%- liquid
+                    assign text_with_span_start = section.settings.announcement_text | replace: '[', '<span class="header-custom__announcement-highlight">'
+                    assign final_text = text_with_span_start | replace: ']', '</span>'
+                -%}
+                {{ final_text }}
+            </div>
+        </div>
+    {%- endif -%}
+
+    <div class="header-custom__main">
+        <div class="header-custom__inner">
+            <div class="header-custom__logo">
+                {%- if section.settings.logo != blank -%}
+                    {%- assign logo_width = section.settings.logo_width | default: 160 -%}
+                    <a href="{{ routes.root_url }}" class="header-custom__logo-link" aria-label="{{ shop.name }}">
+                        {{ section.settings.logo | image_url: width: logo_width | image_tag: width: logo_width, loading: 'lazy', alt: shop.name }}
+                    </a>
+                {%- else -%}
+                    <a href="{{ routes.root_url }}" class="header-custom__logo-text">{{ shop.name }}</a>
+                {%- endif -%}
+            </div>
+
+            <div class="header-custom__right">
+                {%- if menu != blank and menu.links.size > 0 -%}
+                    <nav class="header-custom__nav">
+                        <ul class="header-custom__menu">
+                            {%- for link in menu.links -%}
+                                <li class="header-custom__menu-item">
+                                    {%- if link.links.size > 0 -%}
+                                        <details class="header-custom__menu-details">
+                                            <summary class="header-custom__menu-link header-custom__menu-link--dropdown">
+                                                {{ link.title }}
+                                            </summary>
+                                            <ul class="header-custom__submenu">
+                                                {%- for child_link in link.links -%}
+                                                    <li class="header-custom__submenu-item">
+                                                        <a class="header-custom__submenu-link" href="{{ child_link.url }}">{{ child_link.title }}</a>
+                                                    </li>
+                                                {%- endfor -%}
+                                            </ul>
+                                        </details>
+                                    {%- else -%}
+                                        <a class="header-custom__menu-link" href="{{ link.url }}">{{ link.title }}</a>
+                                    {%- endif -%}
+                                </li>
+                            {%- endfor -%}
+                        </ul>
+                    </nav>
+                {%- endif -%}
+
+                <div class="header-custom__actions">
+                    {%- if section.settings.show_search -%}
+                        <a class="header-custom__icon-link" href="{{ routes.search_url }}">
+                            <svg class="header-custom__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.08 17.98">
+                                <circle class="cls-1" cx="6.79" cy="7.12" r="6.2"/>
+                                <line class="cls-1" x1="16.63" y1="17.2" x2="11.04" y2="11.62"/>
+                            </svg>
+                        </a>
+                    {%- endif -%}
+
+                    {%- if section.settings.show_account and shop.customer_accounts_enabled -%}
+                        <a class="header-custom__icon-link" href="{{ routes.account_url }}">
+                            <svg class="header-custom__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.08 17.98">
+                                <circle class="cls-1" cx="8.54" cy="4.08" r="3.58"/>
+                                <path class="cls-1" d="M16.58,17.48H.5v-1.8c0-3.05,2.47-5.52,5.52-5.52h5.04c3.05,0,5.52,2.47,5.52,5.52v1.8Z"/>
+                            </svg>
+                        </a>
+                    {%- endif -%}
+
+                    {%- if section.settings.show_cart -%}
+                        <a class="header-custom__icon-link" href="{{ routes.cart_url }}">
+                            <svg class="header-custom__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.08 17.98">
+                                <path class="cls-1" d="M12.15,17.17h-7.23c-2.44,0-4.43-1.98-4.43-4.43L.91.81h14.96l.7,11.93c0,2.44-1.98,4.43-4.43,4.43Z"/>
+                                <path class="cls-1" d="M12.63,1.22c0,2.74-1.91,4.97-4.27,4.97S4.09,3.96,4.09,1.22"/>
+                            </svg>
+                        </a>
+                    {%- endif -%}
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+{% schema %}
+{
+    "name": "【カスタム】ヘッダー",
+    "settings": [
+        {
+            "type": "checkbox",
+            "id": "show_announcement",
+            "label": "お知らせバーを表示",
+            "default": true
+        },
+        {
+            "type": "text",
+            "id": "announcement_text",
+            "label": "お知らせテキスト",
+            "default": "¥5,800円以上で[送料無料！]"
+        },
+        {
+            "type": "color",
+            "id": "announcement_background",
+            "label": "お知らせバーの背景色",
+            "default": "#2f806c"
+        },
+        {
+            "type": "color",
+            "id": "announcement_color",
+            "label": "お知らせバーの文字色",
+            "default": "#ffffff"
+        },
+        {
+            "type": "color",
+            "id": "announcement_highlight_color",
+            "label": "お知らせバーの強調文字色",
+            "default": "#de9814"
+        },
+        {
+            "type": "color",
+            "id": "header_background",
+            "label": "ヘッダー背景色",
+            "default": "#ffffff"
+        },
+        {
+            "type": "color",
+            "id": "header_text_color",
+            "label": "テキスト色",
+            "default": "#4c4c4c"
+        },
+        {
+            "type": "image_picker",
+            "id": "logo",
+            "label": "ロゴ画像"
+        },
+        {
+            "type": "range",
+            "id": "logo_width",
+            "label": "ロゴ幅 (px)",
+            "min": 60,
+            "max": 240,
+            "step": 10,
+            "default": 160
+        },
+        {
+            "type": "link_list",
+            "id": "menu",
+            "label": "メニュー"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_search",
+            "label": "検索アイコンを表示",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "show_account",
+            "label": "アカウントアイコンを表示",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "show_cart",
+            "label": "カートアイコンを表示",
+            "default": true
+        },
+        {
+            "type": "range",
+            "id": "padding_desktop",
+            "label": "上下余白（PC）",
+            "min": 10,
+            "max": 80,
+            "step": 2,
+            "default": 28
+        },
+        {
+            "type": "range",
+            "id": "padding_mobile",
+            "label": "上下余白（スマホ）",
+            "min": 8,
+            "max": 60,
+            "step": 2,
+            "default": 20
+        }
+    ],
+    "presets": [
+        {
+            "name": "【カスタム】ヘッダー"
+        }
+    ]
+}
+{% endschema %}
