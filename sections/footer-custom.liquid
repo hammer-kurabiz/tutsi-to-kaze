@@ -1,129 +1,120 @@
 <footer class="footer-custom">
     <div class="footer-custom__main page-width">
-        {%- for block in section.blocks -%}
-        <div class="footer-custom__block footer-custom-block" {{ block.shopify_attributes }}>
-            {%- case block.type -%}
-            {%- when 'brand_info' -%}
-                <div class="footer-custom-block__brand-info">
-                {%- if block.settings.logo != blank -%}
-                    <div class="footer-custom-block__logo">
-                    <a href="{{ routes.root_url }}">
-                        <img src="{{ block.settings.logo | image_url: width: 300 }}" alt="{{ shop.name }}" loading="lazy">
-                    </a>
-                    </div>
+        {% comment %} --- 1列目：ブランド情報 --- {% endcomment %}
+        <div class="footer-custom__column footer-custom__brand-info">
+            <div class="logo">
+                <a href="{{ routes.root_url }}">
+                {% comment %} ロゴ画像をここに設定。なければショップ名を表示。 {% endcomment %}
+                {%- if section.settings.logo != blank -%}
+                    <img src="{{ section.settings.logo | image_url: width: 300 }}" alt="{{ shop.name }}" loading="lazy">
                 {%- else -%}
-                    <a href="{{ routes.root_url }}" class="footer-custom-block__shop-name">{{ shop.name }}</a>
+                    土と風の植物園
                 {%- endif -%}
-
-                {%- if block.settings.text != blank -%}
-                    <div class="footer-custom-block__text">{{ block.settings.text }}</div>
-                {%- endif -%}
-
-                <ul class="footer-custom-block__social-icons">
-                    {% comment %} SNSアイコンのリンク先はテーマ設定の「SNS」から自動で読み込まれます {% endcomment %}
-                    {%- if settings.social_line_link != blank -%}
-                        <li>
-                            <a href="{{ settings.social_line_link }}">
-                                {%- render 'icon-line' -%}
-                            </a>
-                        </li>
-                    {%- endif -%}
-                    {%- if settings.social_instagram_link != blank -%}
-                        <li>
-                            <a href="{{ settings.social_instagram_link }}">
-                                {%- render 'icon-instagram' -%}
-                            </a>
-                        </li>
-                    {%- endif -%}
-                    {%- if settings.social_facebook_link != blank -%}
-                        <li>
-                            <a href="{{ settings.social_facebook_link }}">
-                                {%- render 'icon-facebook' -%}
-                            </a>
-                        </li>
-                    {%- endif -%}
+                </a>
+            </div>
+            <address class="address">
+                土と風の植物園ファクトリーストア<br>
+                〒710-0041 岡山県倉敷市五日市 70-1<br>
+                Open 10:00 / close 17:00 (土日祝 休み)<br>
+                駐車場 5台有<br><br>
+                TEL 086-436-9030<br>
+                MAIL toiawase@tsuchikaze.jp
+            </address>
+            <ul class="social-icons">
+                <li><a href="#">{%- render 'icon-line' -%}</a></li>
+                <li><a href="#">{%- render 'icon-instagram' -%}</a></li>
+                <li><a href="#">{%- render 'icon-facebook' -%}</a></li>
+            </ul>
+            <nav class="legal-links">
+                <ul>
+                    <li><a href="#">特定商取引法に基づく表記</a></li>
+                    <li><a href="#">プライバシーポリシー</a></li>
+                    <li><a href="#">利用規約</a></li>
                 </ul>
-
-                </div>
-
-            {%- when 'link_list' -%}
-                {%- if block.settings.menu != blank -%}
-                <div class="footer-custom-block__link-list">
-                    <h3 class="footer-custom-block__title">{{ block.settings.menu.title }}</h3>
-                    <ul>
-                    {%- for link in block.settings.menu.links -%}
-                        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-                    {%- endfor -%}
-                    </ul>
-                </div>
-                {%- endif -%}
-            {%- endcase -%}
+            </nav>
         </div>
-        {%- endfor -%}
+
+        <div class="footer-custom__menu">
+            <div class="footer-custom__column footer-custom__menu-list">
+                <ul class="main-menu">
+                    <li><a href="#">当店のイチオシ</a></li>
+                    <li><a href="#">ランキング</a></li>
+                    <li><a href="#">新商品</a></li>
+                    <li><a href="#">ロングセラー</a></li>
+                </ul>
+            </div>
+
+            {% comment %} --- 3列目：メニュー2 --- {% endcomment %}
+            <div class="footer-custom__column footer-custom__menu-list">
+                <h3 class="title">カテゴリー</h3>
+                <ul class="main-menu">
+                    <li>
+                        <ul class="sub-menu">
+                            <li><a href="#">ドライフラワー</a></li>
+                            <li><a href="#">BIG ボタニカル</a></li>
+                            <li><a href="#">フレッシュフラワー</a></li>
+                            <li><a href="#">フラワーベース</a></li>
+                            <li><a href="#">ドライフラワーのスワッグ</a></li>
+                            <li><a href="#">ドライフラワーのブーケ</a></li>
+                            <li><a href="#">ドライフラワーのリース</a></li>
+                            <li><a href="#">ドライフラワー定期便</a></li>
+                            <li><a href="#">ドライフラワーのアクセサリー</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            {% comment %} --- 4列目：メニュー3 --- {% endcomment %}
+            <div class="footer-custom__column footer-custom__menu-list">
+                <ul class="main-menu">
+                    <li><a href="#">土と風の植物園について</a></li>
+                    <li><a href="#">読みもの</a></li>
+                    <li><a href="#">イベント情報</a></li>
+                    <li><a href="#">プレスリリース</a></li>
+                </ul>
+            </div>
+
+            {% comment %} --- 5列目：メニュー4 --- {% endcomment %}
+            <div class="footer-custom__column footer-custom__menu-list">
+                <ul class="main-menu">
+                    <li><a href="#">マイページ</a></li>
+                    <li><a href="#">返品・返金</a></li>
+                    <li><a href="#">配送方法・送料</a></li>
+                    <li><a href="#">お客様の声</a></li>
+                    <li><a href="#">よくある質問</a></li>
+                    <li><a href="#">お問い合わせ</a></li>
+                </ul>
+            </div>
+        </div>
+
     </div>
 
     <div class="footer-custom__bottom page-width">
         <div class="footer-custom__copyright">
-        &copy; {{ 'now' | date: "%Y" }}, {{ shop.name }}
+            &copy; {{ 'now' | date: "%Y" }}, {{ shop.name }}
         </div>
-        {%- if section.settings.show_payment_icons -%}
         <div class="footer-custom__payment-icons">
             {%- for type in shop.enabled_payment_types -%}
-            {{ type | payment_type_svg_tag: class: 'payment-icon' }}
+                {{ type | payment_type_svg_tag: class: 'payment-icon' }}
             {%- endfor -%}
         </div>
-        {%- endif -%}
     </div>
-    </footer>
+</footer>
 
-    {% schema %}
+{% schema %}
     {
     "name": "【カスタム】フッター",
     "settings": [
         {
-        "type": "checkbox",
-        "id": "show_payment_icons",
-        "label": "決済アイコンを表示する",
-        "default": true
+        "type": "image_picker",
+        "id": "logo",
+        "label": "フッター用ロゴ画像"
         }
     ],
-    "blocks": [
+    "presets": [
         {
-        "type": "brand_info",
-        "name": "ブランド情報",
-        "limit": 1,
-        "settings": [
-            {
-            "type": "image_picker",
-            "id": "logo",
-            "label": "ロゴ画像"
-            },
-            {
-            "type": "richtext",
-            "id": "text",
-            "label": "テキスト（住所・連絡先など）"
-            }
-        ]
-        },
-        {
-        "type": "link_list",
-        "name": "メニュー",
-        "limit": 4,
-        "settings": [
-            {
-            "type": "link_list",
-            "id": "menu",
-            "label": "表示するメニューを選択"
-            }
-        ]
+        "name": "【カスタム】フッター"
         }
-    ],
-    "default": {
-        "blocks": [
-        { "type": "brand_info" },
-        { "type": "link_list" },
-        { "type": "link_list" }
-        ]
-    }
+    ]
     }
 {% endschema %}

@@ -1031,6 +1031,12 @@
       },
       {
         "type": "text",
+        "id": "social_line_link",
+        "label": "LINE",
+        "info": "https://line.me/ti/p/..."
+      },
+      {
+        "type": "text",
         "id": "social_twitter_link",
         "label": "t:settings_schema.social-media.settings.social_twitter_link.label",
         "info": "t:settings_schema.social-media.settings.social_twitter_link.info"

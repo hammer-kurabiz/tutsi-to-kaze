@@ -1,17 +1,140 @@
+/* =================================================================
+   カスタムフッター (静的モックアップ)
+================================================================= */
+
 .footer-custom {
     background-color: #fff;
     border-top: 1px solid #f0f0f0;
-    padding: 5rem 0 2rem;
+    padding: 6rem 0 3rem;
     font-size: 1.4rem;
+    color: #4c4c4c;
 
     &__main {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 3rem;
-        margin-bottom: 4rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 10rem;
+        margin-bottom: 5rem;
+        @media (max-width:750px){
+            flex-wrap: wrap;
+        }
+        @media (max-width:992px){
+            flex-flow: column;
+            gap: 3rem;
+        }
+    }
 
-        @media (min-width: 750px) {
-        grid-template-columns: 2fr 1fr 1fr 1fr; 
+    // --- 1列目：ブランド情報 ---
+    &__brand-info {
+        width: fit-content;
+        .logo {
+            margin-bottom: 2rem;
+            a{
+                display: flex;
+                width: 100%;
+                max-width: 200px;
+                img {
+                    width: 100%;;
+                    height: auto;
+                }
+            }
+        }
+        .address {
+            font-style: normal;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            white-space: nowrap;
+        }
+        .social-icons {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem;
+            display: flex;
+            gap: 1rem;
+            a { display: block; width: 32px; height: 32px; }
+        }
+        .legal-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 0.8rem;
+            ul{
+                padding-left: 0;
+                list-style: none;
+                display: grid;
+                gap: .5rem;
+            }
+        }
+    }
+
+    &__menu{
+        flex: 1;
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 2rem;
+        white-space: nowrap;
+
+        @media (max-width:768px){
+            flex-flow: column;
+        }
+        @media (max-width:992px){
+            row-gap: 1.5rem;
+            column-gap: 4rem;
+        }
+        @media (min-width:992px){
+            justify-content: space-between;
+        }
+
+        &-list {
+            .title {
+                font-size: 1.6rem;
+                font-weight: bold;
+                margin: 0 0 1rem;
+            }
+            .main-menu {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: grid;
+                gap: 1.5rem;
+                li{
+                    a{
+                        font-family: var(--font-heading-family);
+                        font-size: 1.6rem;
+                    }
+                }
+                .sub-menu {
+                    padding-left: .5rem;
+                    list-style: none;
+                    display: grid;
+                    gap: .8rem;
+                    li{
+                        a{
+                            font-size: 1.4rem;
+                            display: flex;
+                            align-items: center;
+                            gap: 1rem;
+                            &::before{
+                                content: '';
+                                width: 3px;
+                                aspect-ratio: 1;
+                                border-radius: 50%;
+                                background-color: currentColor;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+        transition: opacity 0.2s ease;
+        &:hover {
+            opacity: 0.7;
         }
     }
 
@@ -23,10 +146,9 @@
         padding-top: 2rem;
         font-size: 1.2rem;
         color: #888;
-
-        @media (max-width: 749px) {
-        flex-direction: column;
-        gap: 1rem;
+        @media (max-width:768px){
+            flex-flow: column-reverse;
+            gap: 3rem;
         }
     }
 
@@ -35,68 +157,6 @@
         gap: 0.5rem;
         .payment-icon {
         height: 2.4rem;
-        }
-    }
-    }
-
-    .footer-custom-block {
-    &__logo {
-        margin-bottom: 2rem;
-        img {
-        max-width: 200px;
-        height: auto;
-        }
-    }
-
-    &__shop-name {
-        font-size: 2rem;
-        font-weight: bold;
-        text-decoration: none;
-        color: inherit;
-        display: block;
-        margin-bottom: 2rem;
-    }
-
-    &__text {
-        line-height: 1.6;
-        margin-bottom: 2rem;
-        p { margin: 0; }
-    }
-
-    &__social-icons {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        gap: 1rem;
-
-        a {
-        display: block;
-        width: 32px;
-        height: 32px;
-        }
-    }
-
-    &__title {
-        font-size: 1.6rem;
-        margin: 0 0 1.5rem;
-    }
-
-    &__link-list {
-        ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: grid;
-        gap: 1rem;
-        }
-        a {
-        text-decoration: none;
-        color: inherit;
-        transition: opacity 0.2s ease;
-        &:hover {
-            opacity: 0.7;
-        }
         }
     }
 }
